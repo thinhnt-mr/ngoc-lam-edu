@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng danh sách học sinh</title>
+    <style>
+        .danh-sach-container {
+            max-height: 300px; /* Chiều cao cuộn của bảng */
+            overflow-y: auto;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            width: 90%;
+        }
+
+        .table-student table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-student th,
+        .table-student td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .table-student thead th {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional */
+        }
+    </style>
+</head>
+<body>
+
+<div class="danh-sach-container">
+    <h2>Danh sách các học sinh</h2>
+    <div class="table-student">
+        <table>
+            <thead>
+            <tr>
+                <th>STT</th>
+                <th style="width: 120px;">Họ và tên</th>
+                <th>Ngày sinh</th>
+                <th>Môn thi</th>
+                <th>Số báo danh</th>
+                <th>Phòng</th>
+                <th>Ghi chú</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Lặp lại nhiều dòng để kiểm tra cuộn -->
+            <tr><td>1</td><td>Nguyễn Văn A</td><td>03/12/2005</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>2</td><td>Nguyễn Văn B</td><td>03/12/2006</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>3</td><td>Nguyễn Văn C</td><td>03/12/2007</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>4</td><td>Nguyễn Văn D</td><td>03/12/2008</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>5</td><td>Nguyễn Văn E</td><td>03/12/2009</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>6</td><td>Nguyễn Văn F</td><td>03/12/2010</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>7</td><td>Nguyễn Văn G</td><td>03/12/2011</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>8</td><td>Nguyễn Văn H</td><td>03/12/2012</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>9</td><td>Nguyễn Văn I</td><td>03/12/2013</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            <tr><td>10</td><td>Nguyễn Văn K</td><td>03/12/2014</td><td>Văn</td><td>09876</td><td>12</td><td>fdfdf</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

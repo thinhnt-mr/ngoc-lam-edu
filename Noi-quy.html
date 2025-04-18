@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trung tâm luyện thi vào lớp 10 Ngọc Lâm tại Hà Nội – đội ngũ giáo viên giỏi, chương trình học chất lượng cao, cam kết hiệu quả ôn thi.">
+  <meta name="keywords" content="Ngọc Lâm, luyện thi vào 10, trung tâm giáo dục, giáo dục Hà Nội, luyện thi học sinh giỏi, học thêm, gia sư">
+  <meta name="author" content="Ngoc Lam Education Center">
+  <meta property="og:title" content="Trung tâm Giáo dục Ngọc Lâm">
+  <meta property="og:description" content="Trung tâm luyện thi vào 10 và dạy kèm chất lượng cao tại Hà Nội.">
+  <meta property="og:image" content="image/logo-to1.jpg">
+  <meta property="og:url" content="https://www.ngoclamedu.com">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css?v=9">
+  <title>Nội Quy Trung Tâm Ngọc Lâm</title>
+</head>
+<body>
+<!-- Header -->
+<header>
+  <section>
+    <div class="header-top">
+      <div class="container-header">
+        <nav>
+          <div class="logo">
+            <a class="logo-header" href="index.html">
+              <img src="image/logo-ngoclam-fix.webp" alt="logo" width="80" height="110">
+            </a>
+          </div>
+          <div class="menu-container">
+            <img src="image/menu-2.png" alt="Menu" id="menu-toggle" width="30" height="30">
+            <ul class="menu" id="menu-items">
+              <li><a href="index.html" data-lang="index.html">Trang Chủ</a></li>
+              <li><a href="Thi-thu.html" data-lang="Thi-thu.html">Thi Thử</a></li>
+              <li><a href="So-do.html" data-lang="So-do.html">Sơ Đồ</a></li>
+              <li><a href="#contact" data-lang="contact">Liên Hệ</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="marquee-wrapper">
+          <div class="marquee-content">
+            <a href="Thi-thu.html" class="marquee-link">
+              Trung tâm Ngọc Lâm hiện đang triển khai dịch vụ Đăng ký thi thử! Nhấn vào đây để biết thêm chi tiết.
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<!-- Introduction Section -->
+<main id="main">
+  <section class="bg-section">
+    <div class="content-img">
+      <img class="img-noi-quy" src="image/noi-quy.png" alt="Nội quy trung tâm" width="100%" height="100%">
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <form id="userForm" action="https://docs.google.com/forms/d/e/1FAIpQLSemxjhsPjmkoUaK_0Ql_VLz2mHauq5aiwTqi3D7PnV1mSgUhQ/formResponse" method="POST">
+          <h2>Liên Hệ Và Tư Vấn</h2>
+          <input type="text" placeholder="Họ và tên" name="entry.1346551371" id="name" required>
+          <input type="text" placeholder="Giới tính" name="entry.398642652" id="gender" required>
+          <input type="text" placeholder="Năm sinh" name="entry.1658693042" id="birthYear" required>
+          <input type="text" placeholder="Số điện thoại" name="entry.1490724017" id="phone" required>
+          <input type="text" placeholder="Địa chỉ" name="entry.2053795213" id="address" required>
+          <input type="text" placeholder="Họ và tên phụ huynh" name="entry.1645906499" id="parentName" required>
+          <input type="text" placeholder="Lớp đang theo học" name="entry.1330599922" id="currentClass" required>
+          <input type="text" placeholder="Môn học đăng ký" name="entry.1892450590" id="course" required>
+          <textarea placeholder="Nguyện vọng và ý kiến phản hồi" name="entry.1202862363" id="content" required></textarea>
+          <br><br>
+          <button type="submit" id="submit">Gửi yêu cầu</button>
+        </form>
+      </div>
+    </div>
+    <div id="overlay" class="overlay">
+      <div class="popup-form" id="popupForm">
+        <span class="close-btn" id="closeForm">&times;</span>
+        <h1>Quét mã QR</h1>
+        <br>
+        <img src="image/dang-ky-qr-fix.webp" loading="lazy" alt="Mã QR Đăng ký" width="40%" height="40%">
+        <br><br>
+        <h1>Hoặc</h1>
+        <form id="googleForm" action="https://docs.google.com/forms/d/e/1FAIpQLSemxjhsPjmkoUaK_0Ql_VLz2mHauq5aiwTqi3D7PnV1mSgUhQ/formResponse" method="POST">
+          <input type="text" placeholder="Họ và tên" name="entry.1346551371" required>
+          <input type="text" placeholder="Giới tính" name="entry.398642652" required>
+          <input type="text" placeholder="Năm sinh" name="entry.1658693042" required>
+          <input type="text" placeholder="Số điện thoại" name="entry.1490724017" required>
+          <input type="text" placeholder="Địa chỉ" name="entry.2053795213" required>
+          <input type="text" placeholder="Họ và tên phụ huynh" name="entry.1645906499" required>
+          <input type="text" placeholder="Lớp đang theo học" name="entry.1330599922" required>
+          <input type="text" placeholder="Môn học đăng ký" name="entry.1892450590" required>
+          <textarea placeholder="Nguyện vọng và ý kiến phản hồi" name="entry.1202862363" required></textarea>
+          <br><br>
+          <button type="submit">Gửi yêu cầu</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="icon-container">
+      <a href="https://www.facebook.com/profile.php?id=61574457089393" target="_blank" class="icon facebook">
+        <img src="image/fb.png" alt="facebook" width="10" height="10">
+      </a>
+      <a href="https://zalo.me/0816695599" target="_blank" class="icon zalo">
+        <img src="image/zalo-2.webp" alt="Zalo" width="10" height="10">
+      </a>
+      <a href="#" class="icon register" id="register-icon">
+        <img src="image/4.svg" alt="Đăng ký" width="10" height="10">
+      </a>
+    </div>
+  </section>
+</main>
+<footer id="footer">
+  <div class="footer">
+    <img class="img-footer" src="image/logo-to1.jpg" loading="lazy" alt="logo Trung Tâm" width="100%" height="100%">
+    <p>Hotline: 081 669 5599</p>
+    <p>Mã số thuế: 0110984684</p>
+    <p>Website: www.ngoclamedu.com</p>
+    <p>Email: <a href="mailto:Ngoclam@ngoclamedu.com">Ngoclam@ngoclamedu.com</a></p>
+    <p>Địa chỉ: Số 185, Đường Sạt Nỏ, Thôn Vài, Hợp Thanh, Mỹ Đức, Hà Nội.</p><br>
+    <div class="footer-1">
+      <br>
+      <p>Bản quyền Website: <a href="https://zalo.me/0816695599">TTGD Ngọc Lâm</a></p>
+      <p>Copyright © 2025 NgocLam Eduction . All rights reserved.</p>
+      <p>Công Ty TNHH Giáo Dục Và Đào Tạo Ngọc Lâm “Giáo Dục Từ Tâm”</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d466.62586386593995!2d105.70525424772836!3d20.669297834405775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d20.6693544!2d105.7054691!5e0!3m2!1svi!2s!4v1742928467055!5m2!1svi!2s" allowfullscreen="" loading="lazy" title="Bản Đồ Địa Chỉ Trung Tâm Ngọc Lâm" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</footer>
+<script src="./js/script.js?v=9" defer></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Trang chủ</title>
+</head>
+<body>
+<header>
+    <section>
+        <div class="logo">
+            <div class="logo-header">
+                <h1>Welcome to My Website</h1>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu-body">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</header>
+<main>
+    <section>
+        <div class="content-main">
+            <div class="content-top">
+                <h2>About US</h2>
+                <p>This fuaif fhfhhf djadfhajf fahdjfhadf djadfhajf fahdjfhadf djadfhajf fahdjfhadf</p>
+                <p>djadfhajf fahdjfhadf djadfhajf fahdjfhadf djadfhajf fahdjfhadf</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <section>
+        <div class="content-footer">
+            <div class="footer-body">
+                <span>@ 2023 not copyright. All fuck copy</span>
+            </div>
+        </div>
+    </section>
+</footer>
+<div class="box">Tôi hiện khi vào tầm nhìn</div>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".box", {
+        scrollTrigger: ".box",
+        opacity: 0,
+        y: 50,
+        duration: 1
+    });
+</script>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

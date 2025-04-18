@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .background-container {
+            background-image: url('../image/DSC06248.JPG');
+            background-size: cover; /* Ảnh phủ kín khu vực cố định */
+            background-position: center; /* Căn giữa ảnh */
+            height: 300px; /* Chiều cao cố định cho ảnh nền */
+            width: 100%; /* Chiều rộng đầy đủ */
+            position: relative; /* Để nội dung tràn ra không ảnh hưởng */
+        }
+        .content {
+            color: white;
+            padding: 20px;
+            position: relative; /* Đảm bảo văn bản nằm trên ảnh */
+            z-index: 1; /* Đưa nội dung lên trên */
+        }
+    </style>
+</head>
+<body>
+<div class="background-container">
+    <div class="content">
+        <p>Đây là nội dung ngắn.</p>
+        <p>Đây là một đoạn văn bản rất dài để thử nghiệm. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+}
+
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "section"
+        "footer";
+    grid-template-rows: 100px auto 60px; /* Header 80px, Footer 60px */
+    width: 1200px; /* Giới hạn chiều rộng tối đa */
+    min-height: 100vh;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Định nghĩa vùng */
+.header {
+    grid-area: header;
+    background: white;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    font-size: 24px;
+    height: auto;
+}
+
+.section {
+    grid-area: section;
+    padding: 20px;
+    background: grey;
+    font-size: 18px;
+    text-align: center;
+    height: auto;
+}
+
+.footer {
+    grid-area: footer;
+    background: #212121;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-size: 16px;
+    height: auto;
+}
+
+/* ✅ Responsive cho Mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        grid-template-rows: 60px auto 50px; /* Giảm chiều cao header và footer */
+    }
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
+.logo p{
+    font-size: 18px;
+}
