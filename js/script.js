@@ -236,6 +236,13 @@ if (document.querySelector('[data-aos]')) {
     document.body.appendChild(script);
 }
 
+window.addEventListener('DOMContentLoaded', function () {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+    document.head.appendChild(link);
+});
+
 // ===== Toggle menu trên giao diện mobile (nút hamburger) =====
 function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
