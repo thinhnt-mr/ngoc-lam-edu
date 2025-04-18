@@ -228,7 +228,7 @@ function resetStudentSearch() {
     searchStudentByName();
 }
 
-// ===== Tải thư viện AOS nếu có phần tử cần hiệu ứng =====
+// =====Tải thư viện AOS nếu có phần tử cần hiệu ứng =====
 if (document.querySelector('[data-aos]')) {
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js';
