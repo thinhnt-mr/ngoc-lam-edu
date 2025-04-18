@@ -207,7 +207,7 @@ function resetSearch() {
     searchByName();
 }
 
-// ===== Tìm kiếm học sinh theo tên (bảng học sinh) =====
+// =====Tìm kiếm học sinh theo tên (bảng học sinh) =====
 function searchStudentByName() {
     const input = document.getElementById("studentSearchInput").value.toLowerCase();
     const table = document.querySelector(".table-student table");
