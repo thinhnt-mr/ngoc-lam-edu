@@ -188,14 +188,14 @@ startAutoSwitch();
 
 // ===== Tìm kiếm học sinh theo tên (danh sách điểm) =====
 function searchByName() {
-    const input = document.getElementById("searchInput").value.toLowerCase();
+    const input = removeAccents(document.getElementById("searchInput").value.toLowerCase());
     const table = document.getElementById("scoreTable");
     const tr = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < tr.length; i++) {
-        const td = tr[i].getElementsByTagName("td")[1];
+    for (let i = 1; i < tr.length; i++) { // Bắt đầu từ 1 để bỏ qua hàng tiêu đề
+        const td = tr[i].getElementsByTagName("td")[2]; // Cột thứ 3 chứa tên
         if (td) {
-            const name = td.textContent.toLowerCase();
+            const name = removeAccents(td.textContent.toLowerCase());
             tr[i].style.display = name.includes(input) ? "" : "none";
         }
     }
@@ -207,16 +207,21 @@ function resetSearch() {
     searchByName();
 }
 
-// =====Tìm kiếm học sinh theo tên (bảng học sinh) =====
+function removeAccents(str) {
+    return str.normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd').replace(/Đ/g, 'D');
+}
+
 function searchStudentByName() {
-    const input = document.getElementById("studentSearchInput").value.toLowerCase();
-    const table = document.querySelector(".table-student table");
+    const input = removeAccents(document.getElementById("studentSearchInput").value.toLowerCase());
+    const table = document.getElementById("danhSachThiSinh");
     const tr = table.getElementsByTagName("tr");
 
     for (let i = 1; i < tr.length; i++) {
-        const td = tr[i].getElementsByTagName("td")[1];
+        const td = tr[i].getElementsByTagName("td")[2];
         if (td) {
-            const name = td.textContent.toLowerCase();
+            const name = removeAccents(td.textContent.toLowerCase());
             tr[i].style.display = name.includes(input) ? "" : "none";
         }
     }

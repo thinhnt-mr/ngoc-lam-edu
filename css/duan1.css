@@ -1,8 +1,0 @@
-.bgr-img {
-    background-image: url('../image/4.svg'); /* Đường dẫn tới ảnh */
-    background-size: cover; /* Ảnh phủ toàn bộ khu vực */
-    background-position: center; /* Căn giữa ảnh */
-    padding: 20px; /* Khoảng cách lề trong để văn bản không sát mép */
-    color: white; /* Màu chữ, chọn màu nổi bật trên ảnh */
-    text-align: center; /* Căn giữa văn bản */
-}
