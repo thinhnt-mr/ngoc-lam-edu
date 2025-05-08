@@ -185,18 +185,26 @@ toggleBtn.addEventListener("click", () => {
 });
 
 startAutoSwitch();
-
-// ===== Tìm kiếm học sinh theo tên (danh sách điểm) =====
+// ===== Tìm kiếm học sinh theo tên hoặc SBD (danh sách điểm) =====
 function searchByName() {
     const input = removeAccents(document.getElementById("searchInput").value.toLowerCase());
     const table = document.getElementById("scoreTable");
     const tr = table.getElementsByTagName("tr");
 
     for (let i = 1; i < tr.length; i++) { // Bắt đầu từ 1 để bỏ qua hàng tiêu đề
-        const td = tr[i].getElementsByTagName("td")[2]; // Cột thứ 3 chứa tên
-        if (td) {
-            const name = removeAccents(td.textContent.toLowerCase());
-            tr[i].style.display = name.includes(input) ? "" : "none";
+        const tdName = tr[i].getElementsByTagName("td")[2]; // Cột thứ 3 chứa tên
+        const tdSBD = tr[i].getElementsByTagName("td")[1]; // Cột thứ 2 chứa SBD
+
+        if (tdName && tdSBD) {
+            const name = removeAccents(tdName.textContent.toLowerCase());
+            const sbd = tdSBD.textContent.toLowerCase();
+
+            // Hiển thị hàng nếu tìm thấy kết quả trong tên HOẶC SBD
+            if (name.includes(input) || sbd.includes(input)) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
         }
     }
 }
