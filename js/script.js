@@ -185,25 +185,36 @@ toggleBtn.addEventListener("click", () => {
 });
 
 startAutoSwitch();
+
 // ===== Tìm kiếm học sinh theo tên hoặc SBD (danh sách điểm) =====
 function searchByName() {
-    const input = removeAccents(document.getElementById("searchInput").value.toLowerCase());
+    const inputValue = document.getElementById("searchInput").value.toLowerCase().trim();
     const table = document.getElementById("scoreTable");
     const tr = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < tr.length; i++) { // Bắt đầu từ 1 để bỏ qua hàng tiêu đề
-        const tdName = tr[i].getElementsByTagName("td")[2]; // Cột thứ 3 chứa tên
-        const tdSBD = tr[i].getElementsByTagName("td")[1]; // Cột thứ 2 chứa SBD
+    for (let i = 1; i < tr.length; i++) {
+        const tdName = tr[i].getElementsByTagName("td")[2]; // Họ Tên
+        const tdSBD = tr[i].getElementsByTagName("td")[1];  // SBD
 
         if (tdName && tdSBD) {
             const name = removeAccents(tdName.textContent.toLowerCase());
             const sbd = tdSBD.textContent.toLowerCase();
 
-            // Hiển thị hàng nếu tìm thấy kết quả trong tên HOẶC SBD
-            if (name.includes(input) || sbd.includes(input)) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
+            // Nếu input là số thì tìm theo SBD
+            if (!isNaN(inputValue) && inputValue !== "") {
+                if (sbd.includes(inputValue)) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+            // Nếu là chữ thì tìm theo Họ Tên
+            else {
+                if (name.includes(removeAccents(inputValue))) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
             }
         }
     }
