@@ -711,6 +711,7 @@ iframe {
     position: fixed;
     top: 105px;
     left: 0;
+    max-width: 400px;
     height: calc(100% - 60px);
     background: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -732,7 +733,7 @@ iframe {
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    max-width: 900px;
+    max-width: 400px;
     max-height: 80vh;
     overflow-y: auto;
 }
@@ -783,8 +784,8 @@ iframe {
 .popup-form button:hover{
     background-color: #4CAF50;
 }
-.size-table{
-    width: auto;
+#scoreTable{
+    width: 400px;
 }
 #googleForm textarea{
     height: 150px;
