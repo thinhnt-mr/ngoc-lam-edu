@@ -717,8 +717,8 @@ iframe {
     position: fixed;
     top: 105px;
     left: 0;
-    width: 100%;
-    height: calc(100% - 60px);
+    width: auto;
+    height: calc(100% - 100px);
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -740,8 +740,8 @@ iframe {
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    width: 100%;
-    max-height: 80vh;
+    width: auto;
+    max-height: 120vh;
     overflow-y: auto;
 }
 
@@ -791,8 +791,71 @@ iframe {
 .popup-form button:hover{
     background-color: #4CAF50;
 }
-#scoreTable{
-    width: 400px;
+/* Container toàn bộ phần danh sách */
+.danh-sach-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* căn giữa bảng và tiêu đề */
+    padding: 5px 5px;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 750px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Tiêu đề */
+.danh-sach-container h2 {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #15515d;
+}
+
+/* Bọc bảng để căn giữa bảng */
+.table-student {
+    width: auto;
+    overflow-x: auto;
+}
+
+/* Bảng */
+.table-student table {
+    border-collapse: collapse;
+    min-width: 700px; /* đủ để không bị mất nội dung trên mobile */
+    margin: 0 auto; /* căn giữa bảng */
+    text-align: center;
+}
+
+/* Header và ô */
+.table-student th,
+.table-student td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Sticky header */
+.table-student thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 13px;
+}
+
+tbody tr td {
+    font-size: 12px;
+}
+.table-student-top{
+    width: 100%;
+}
+.table-student-top thead th {
+    padding: 10px;
+}
+.table-student-top tbody td{
+    padding: 10px;
 }
 #googleForm textarea{
     height: 150px;
@@ -886,64 +949,6 @@ ul {
     color:#f44336;
 }
 
-/* Container toàn bộ phần danh sách */
-.danh-sach-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* căn giữa bảng và tiêu đề */
-    padding: 5px 5px;
-    overflow-x: auto;
-    overflow-y: auto;
-    max-height: 400px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Tiêu đề */
-.danh-sach-container h2 {
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
-    color: #15515d;
-}
-
-/* Bọc bảng để căn giữa bảng */
-.table-student {
-    width: 100%;
-    overflow-x: auto;
-}
-
-/* Bảng */
-.table-student table {
-    border-collapse: collapse;
-    width: max-content;
-    min-width: 900px; /* đủ để không bị mất nội dung trên mobile */
-    margin: 0 auto; /* căn giữa bảng */
-    text-align: center;
-}
-
-/* Header và ô */
-.table-student th,
-.table-student td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Sticky header */
-.table-student thead th {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 1;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 13px;
-}
-
-tbody tr td {
-    font-size: 12px;
-}
 .marquee-wrapper {
     position: fixed;
     top: 100px; /* điều chỉnh cho phù hợp với chiều cao menu */
