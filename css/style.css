@@ -736,7 +736,7 @@ iframe {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     position: relative;
     max-width: 900px;
-    max-height: 82vh;
+    max-height: 70vh;
     overflow-y: auto;
 }
 
@@ -822,8 +822,11 @@ iframe {
 }
 /* Bọc bảng để căn giữa bảng */
 .table-student {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
     height: 40vh;
-    width: 94%;
+    width: 90%;
     overflow-x: auto;
 }
 
