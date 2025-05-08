@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giáo dục Ngọc Lâm - Luyện thi vào 10</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Trung tâm luyện thi vào lớp 10 Ngọc Lâm tại Hà Nội – đội ngũ giáo viên giỏi, chương trình học chất lượng cao, cam kết hiệu quả ôn thi.">
@@ -26,7 +27,7 @@
 
     <!-- Main Stylesheet -->
     <base href="https://www.ngoclamedu.com/">
-    <link rel="stylesheet" href="./css/style.css?v=11">
+    <link rel="stylesheet" href="./css/style.css?v=12">
 
     <!-- Favicon & Manifest -->
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
@@ -34,7 +35,9 @@
     <link rel="shortcut icon" href="favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <link rel="manifest" href="./favicon/site.webmanifest" />
-    <title>Giáo dục Ngọc Lâm - Luyện thi vào 10</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
 </head>
 <body>
 <header>
@@ -241,24 +244,2711 @@
     <div id="overlay" class="overlay">
         <div class="popup-form" id="popupForm">
             <span class="close-btn" id="closeForm">&times;</span>
-            <h1>Đăng Ký Ngay</h1>
-            <br>
-            <img src="image/dang-ky-qr-fix.webp" loading="lazy" alt="Mã QR Đăng ký" width="40%" height="40%">
-            <br><br>
-            <h1>Hoặc</h1>
-            <form id="googleForm" action="https://docs.google.com/forms/d/e/1FAIpQLSemxjhsPjmkoUaK_0Ql_VLz2mHauq5aiwTqi3D7PnV1mSgUhQ/formResponse" method="POST">
-                <input type="text" placeholder="Họ và tên" name="entry.1346551371" required>
-                <input type="text" placeholder="Giới tính" name="entry.398642652" required>
-                <input type="text" placeholder="Năm sinh" name="entry.1658693042" required>
-                <input type="text" placeholder="Số điện thoại" name="entry.1490724017" required>
-                <input type="text" placeholder="Địa chỉ" name="entry.2053795213" required>
-                <input type="text" placeholder="Họ và tên phụ huynh" name="entry.1645906499" required>
-                <input type="text" placeholder="Lớp đang theo học" name="entry.1330599922" required>
-                <input type="text" placeholder="Môn học đăng ký" name="entry.1892450590" required>
-                <textarea placeholder="Nguyện vọng và ý kiến phản hồi" name="entry.1202862363" required></textarea>
-                <br><br>
-                <button type="submit">Gửi yêu cầu</button>
-            </form>
+            <div class="danh-sach-container">
+                <h2>Danh sách điểm thi</h2>
+                <div class="search-student">
+                    <input type="text" id="searchInput" placeholder="Tìm theo SBD hoặc Họ Tên..." onkeyup="searchByName()" />
+                    <i class="fas fa-sync-alt refresh-icon" onclick="resetSearch()"></i>
+                </div>
+                <div class="table-student">
+                    <table id="scoreTable" border="1" cellpadding="10" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>SBD</th>
+                            <th>Họ và tên</th>
+                            <th>Ngày sinh</th>
+                            <th>Toán</th>
+                            <th>Văn</th>
+                            <th>Anh</th>
+                            <th>Tổng điểm</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>115001</td>
+                            <td>Nguyễn Tràng An</td>
+                            <td>4/10/10</td>
+                            <td>7</td>
+                            <td>2.25</td>
+                            <td>5.5</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>115002</td>
+                            <td>Bạch Gia An</td>
+                            <td>3/26/10</td>
+                            <td>4</td>
+                            <td>2.75</td>
+                            <td>6.25</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>115003</td>
+                            <td>Chu Ngọc Hồng An</td>
+                            <td>18/05/2010</td>
+                            <td>8.75</td>
+                            <td>5.25</td>
+                            <td>2</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>115004</td>
+                            <td>Nguyễn Thị Quỳnh Anh</td>
+                            <td>10/9/10</td>
+                            <td>5.5</td>
+                            <td>2.75</td>
+                            <td>3.25</td>
+                            <td>11.5</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>115005</td>
+                            <td>Phạm Thị Hoàng Anh</td>
+                            <td>9/1/10</td>
+                            <td>7.25</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>15.25</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>115006</td>
+                            <td>Nguyễn Hoàng Anh</td>
+                            <td>8/7/10</td>
+                            <td>6.75</td>
+                            <td>3.75</td>
+                            <td>5</td>
+                            <td>15.5</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>115007</td>
+                            <td>Phạm Tuấn Anh</td>
+                            <td>20/07/2010</td>
+                            <td>7</td>
+                            <td>2.25</td>
+                            <td>5.25</td>
+                            <td>14.5</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>115008</td>
+                            <td>Dương Quỳnh Anh</td>
+                            <td>3/2/10</td>
+                            <td>7.5</td>
+                            <td>5</td>
+                            <td>5.5</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>115009</td>
+                            <td>Nguyễn Thị Lan Anh</td>
+                            <td>23/05/2010</td>
+                            <td>6.5</td>
+                            <td>3.75</td>
+                            <td>5.75</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>115010</td>
+                            <td>Nguyễn Hà Anh</td>
+                            <td>11/3/10</td>
+                            <td>5.25</td>
+                            <td>2</td>
+                            <td>1.75</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>115011</td>
+                            <td>Nguyễn Hà Anh</td>
+                            <td>5/22/10</td>
+                            <td>7.5</td>
+                            <td>2.5</td>
+                            <td>3.75</td>
+                            <td>13.75</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>115012</td>
+                            <td>Phạm Nhật Anh</td>
+                            <td>3/15/10</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>4.75</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>115013</td>
+                            <td>Nguyễn Mai Anh</td>
+                            <td>6/9/10</td>
+                            <td>6.5</td>
+                            <td>5</td>
+                            <td>5.25</td>
+                            <td>16.75</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>115014</td>
+                            <td>Đào Bảo Anh</td>
+                            <td>29/07/2010</td>
+                            <td>8</td>
+                            <td>6</td>
+                            <td>7.75</td>
+                            <td>21.75</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>115015</td>
+                            <td>Hoàng Việt Anh</td>
+                            <td>8/12/10</td>
+                            <td>7.5</td>
+                            <td>7.25</td>
+                            <td>8.5</td>
+                            <td>23.25</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>115016</td>
+                            <td>Phạm Hải Anh</td>
+                            <td>3/9/10</td>
+                            <td>8.25</td>
+                            <td>8.25</td>
+                            <td>7.25</td>
+                            <td>23.75</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>115017</td>
+                            <td>Bạch Thị Ánh</td>
+                            <td>21/08/2010</td>
+                            <td>3.25</td>
+                            <td>3</td>
+                            <td>3.5</td>
+                            <td>9.75</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>115018</td>
+                            <td>Nguyễn Văn Bắc</td>
+                            <td>25/01/2010</td>
+                            <td>7.5</td>
+                            <td>3</td>
+                            <td>4.75</td>
+                            <td>15.25</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>115019</td>
+                            <td>Nguyễn Thanh Bách</td>
+                            <td></td>
+                            <td>3.25</td>
+                            <td>5.5</td>
+                            <td>1</td>
+                            <td>9.75</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>115020</td>
+                            <td>Nguyễn Chí Bảo</td>
+                            <td>19/07/2010</td>
+                            <td>4.5</td>
+                            <td>3.25</td>
+                            <td>3.25</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>115021</td>
+                            <td>Bạch Quốc Bảo</td>
+                            <td>1/9/10</td>
+                            <td>4.75</td>
+                            <td>5.25</td>
+                            <td>5.5</td>
+                            <td>15.5</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>115022</td>
+                            <td>Lưu Gia Bảo</td>
+                            <td>4/13/10</td>
+                            <td>6.25</td>
+                            <td>5.5</td>
+                            <td>5.75</td>
+                            <td>17.5</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>115023</td>
+                            <td>Phạm Quốc Bảo</td>
+                            <td>8/1/10</td>
+                            <td>7.5</td>
+                            <td>4.5</td>
+                            <td>8</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>115024</td>
+                            <td>Nguyễn Gia Bảo</td>
+                            <td>20/05/2010</td>
+                            <td>4</td>
+                            <td>1.5</td>
+                            <td>3.25</td>
+                            <td>8.75</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>115025</td>
+                            <td>Vũ Minh Châu</td>
+                            <td>3/1/10</td>
+                            <td>4</td>
+                            <td>4.25</td>
+                            <td>4.25</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>115026</td>
+                            <td>Hoàng Linh Chi</td>
+                            <td>1/16/10</td>
+                            <td>5.5</td>
+                            <td>4</td>
+                            <td>3.5</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>115027</td>
+                            <td>Chu Thị Quỳnh Chi</td>
+                            <td>11/15/10</td>
+                            <td>7.25</td>
+                            <td>5.25</td>
+                            <td>6.5</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>115028</td>
+                            <td>Bùi Văn Chiến</td>
+                            <td>7/6/10</td>
+                            <td>5</td>
+                            <td>2.25</td>
+                            <td>3.25</td>
+                            <td>10.5</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>115029</td>
+                            <td>Nguyễn Minh Chiến</td>
+                            <td>21/07/2010</td>
+                            <td>6</td>
+                            <td>3.25</td>
+                            <td>3.75</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>115030</td>
+                            <td>Chu Minh Chiến</td>
+                            <td>7/5/10</td>
+                            <td>5.5</td>
+                            <td>3.75</td>
+                            <td>5.5</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td>115031</td>
+                            <td>Phạm Thị Chinh</td>
+                            <td>1/5/10</td>
+                            <td>1.75</td>
+                            <td>3.5</td>
+                            <td>2</td>
+                            <td>7.25</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>115032</td>
+                            <td>Chu Thị Chúc</td>
+                            <td>10/10/09</td>
+                            <td>3.5</td>
+                            <td>3.25</td>
+                            <td>3.25</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td>115033</td>
+                            <td>Vũ Thị Kim Cúc</td>
+                            <td>28/03/2010</td>
+                            <td>5.75</td>
+                            <td>3</td>
+                            <td>4.5</td>
+                            <td>13.25</td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                            <td>115034</td>
+                            <td>Phạm Minh Cường</td>
+                            <td>7/4/10</td>
+                            <td>7.75</td>
+                            <td>6.25</td>
+                            <td>7</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td>115035</td>
+                            <td>Phạm Anh Đào</td>
+                            <td>16/01/2010</td>
+                            <td>5.5</td>
+                            <td>2.75</td>
+                            <td>5</td>
+                            <td>13.25</td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td>115036</td>
+                            <td>Nguyễn Quốc Đạt</td>
+                            <td>29/08/2010</td>
+                            <td>6.75</td>
+                            <td>4</td>
+                            <td>5.75</td>
+                            <td>16.5</td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td>115037</td>
+                            <td>Nguyễn Tiến Đạt</td>
+                            <td>29/08/2010</td>
+                            <td>7</td>
+                            <td>3.5</td>
+                            <td>7.5</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>38</td>
+                            <td>115038</td>
+                            <td>Nguyễn Thị Ngọc Diệp</td>
+                            <td>15/11/2010</td>
+                            <td>8</td>
+                            <td>4.25</td>
+                            <td>3</td>
+                            <td>15.25</td>
+                        </tr>
+                        <tr>
+                            <td>39</td>
+                            <td>115039</td>
+                            <td>Trần Bảo Diệp</td>
+                            <td>13/09/2010</td>
+                            <td>8.5</td>
+                            <td>5.5</td>
+                            <td>8.25</td>
+                            <td>22.25</td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td>115040</td>
+                            <td>Nguyễn Mạnh Điệp</td>
+                            <td>10/7/10</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>41</td>
+                            <td>115041</td>
+                            <td>Nguyễn Thị Diệu</td>
+                            <td>4/8/10</td>
+                            <td>4</td>
+                            <td>2.75</td>
+                            <td>5.75</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>42</td>
+                            <td>115042</td>
+                            <td>Hoàng Trung Duẩn</td>
+                            <td>16/07/2010</td>
+                            <td>6.75</td>
+                            <td>9.25</td>
+                            <td>10</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>43</td>
+                            <td>115043</td>
+                            <td>Nguyễn Minh Đức</td>
+                            <td>27/06/2010</td>
+                            <td>5</td>
+                            <td>1.75</td>
+                            <td>4.5</td>
+                            <td>11.25</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>115044</td>
+                            <td>Nguyễn Minh Đức</td>
+                            <td>6/27/10</td>
+                            <td>5.75</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>12.75</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td>115045</td>
+                            <td>Phạm Minh Đức</td>
+                            <td>21/05/2010</td>
+                            <td>6</td>
+                            <td>5.5</td>
+                            <td>8.75</td>
+                            <td>20.25</td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                            <td>115046</td>
+                            <td>Nguyễn Quý Đức</td>
+                            <td></td>
+                            <td>4.25</td>
+                            <td>3.5</td>
+                            <td>3.75</td>
+                            <td>11.5</td>
+                        </tr>
+                        <tr>
+                            <td>47</td>
+                            <td>115047</td>
+                            <td>Nguyễn Phương Dung</td>
+                            <td>6/5/10</td>
+                            <td>6.5</td>
+                            <td>3.5</td>
+                            <td>5.75</td>
+                            <td>15.75</td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td>115048</td>
+                            <td>Nguyễn Hoàng Dũng</td>
+                            <td>15/03/2010</td>
+                            <td>6.5</td>
+                            <td>8</td>
+                            <td>6</td>
+                            <td>14.5</td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td>115049</td>
+                            <td>Trần Phúc Dương</td>
+                            <td>10/27/10</td>
+                            <td>6.5</td>
+                            <td>3.25</td>
+                            <td>5.75</td>
+                            <td>15.5</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>115050</td>
+                            <td>Phạm Thùy Dương</td>
+                            <td>9/2/10</td>
+                            <td>7.75</td>
+                            <td>8.5</td>
+                            <td>3</td>
+                            <td>19.25</td>
+                        </tr>
+                        <tr>
+                            <td>51</td>
+                            <td>115051</td>
+                            <td>Bùi Văn Duy</td>
+                            <td>26/07/2010</td>
+                            <td>4.25</td>
+                            <td>2.75</td>
+                            <td>5.5</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td>115052</td>
+                            <td>Nguyễn Vũ Duy</td>
+                            <td>31/05/2010</td>
+                            <td>7.25</td>
+                            <td>5.5</td>
+                            <td>7.75</td>
+                            <td>20.5</td>
+                        </tr>
+                        <tr>
+                            <td>53</td>
+                            <td>115053</td>
+                            <td>Phạm Đức Duy</td>
+                            <td>15/03/2010</td>
+                            <td>7</td>
+                            <td>5.5</td>
+                            <td>7.25</td>
+                            <td>19.75</td>
+                        </tr>
+                        <tr>
+                            <td>54</td>
+                            <td>115054</td>
+                            <td>Phạm Thị Quỳnh Duyên</td>
+                            <td>8/1/10</td>
+                            <td>6.25</td>
+                            <td>2.5</td>
+                            <td>3.25</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>55</td>
+                            <td>115055</td>
+                            <td>Nguyễn Mỹ Duyên</td>
+                            <td>3/9/10</td>
+                            <td>6.75</td>
+                            <td>5.5</td>
+                            <td>8.25</td>
+                            <td>20.5</td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td>115056</td>
+                            <td>Nguyễn Hải Hà</td>
+                            <td>9/7/10</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>0.5</td>
+                            <td>5.5</td>
+                        </tr>
+                        <tr>
+                            <td>57</td>
+                            <td>115057</td>
+                            <td>Bạch Hồng Hà</td>
+                            <td>18/03/2010</td>
+                            <td>5.5</td>
+                            <td>3.25</td>
+                            <td>6</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>58</td>
+                            <td>115058</td>
+                            <td>Nguyễn Đức Hải</td>
+                            <td>27/10/2010</td>
+                            <td>4.25</td>
+                            <td>2.5</td>
+                            <td>5.75</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>59</td>
+                            <td>115059</td>
+                            <td>Đặng Lý Hải</td>
+                            <td>3/3/10</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>2.5</td>
+                            <td>6.5</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td>115060</td>
+                            <td>Vũ Lý Hải</td>
+                            <td>23/03/2010</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>2.25</td>
+                            <td>7.25</td>
+                        </tr>
+                        <tr>
+                            <td>61</td>
+                            <td>115061</td>
+                            <td>Đinh Đức Hải</td>
+                            <td>8/9/10</td>
+                            <td>3.75</td>
+                            <td>2.75</td>
+                            <td>1.25</td>
+                            <td>7.75</td>
+                        </tr>
+                        <tr>
+                            <td>62</td>
+                            <td>115062</td>
+                            <td>Phạm Minh Hải</td>
+                            <td></td>
+                            <td>6.75</td>
+                            <td>5.75</td>
+                            <td>7.25</td>
+                            <td>19.75</td>
+                        </tr>
+                        <tr>
+                            <td>63</td>
+                            <td>115063</td>
+                            <td>Đồ Hoàng Hải</td>
+                            <td></td>
+                            <td>7</td>
+                            <td>7.5</td>
+                            <td>7.25</td>
+                            <td>21.75</td>
+                        </tr>
+                        <tr>
+                            <td>64</td>
+                            <td>115064</td>
+                            <td>Đặng Thị Hằng</td>
+                            <td>7/8/10</td>
+                            <td>4.75</td>
+                            <td>4.25</td>
+                            <td>4</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>65</td>
+                            <td>115065</td>
+                            <td>Hoàng Thúy Hằng</td>
+                            <td>12/12/10</td>
+                            <td>5.75</td>
+                            <td>2.5</td>
+                            <td>5</td>
+                            <td>13.25</td>
+                        </tr>
+                        <tr>
+                            <td>66</td>
+                            <td>115066</td>
+                            <td>Bùi Thu Hằng</td>
+                            <td>8/4/10</td>
+                            <td>8</td>
+                            <td>7.25</td>
+                            <td>7.5</td>
+                            <td>22.75</td>
+                        </tr>
+                        <tr>
+                            <td>67</td>
+                            <td>115067</td>
+                            <td>Phạm Minh Hảo</td>
+                            <td>4/21/10</td>
+                            <td>6.5</td>
+                            <td>2.5</td>
+                            <td>4</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>68</td>
+                            <td>115068</td>
+                            <td>Nguyễn Văn Hiến</td>
+                            <td>5/9/10</td>
+                            <td>1.5</td>
+                            <td>2.5</td>
+                            <td>2.75</td>
+                            <td>6.75</td>
+                        </tr>
+                        <tr>
+                            <td>69</td>
+                            <td>115069</td>
+                            <td>Bùi Thị Hiền</td>
+                            <td>22/07/2010</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td>115070</td>
+                            <td>Lê Thanh Hiền</td>
+                            <td>22/11/2010</td>
+                            <td>5</td>
+                            <td>3.5</td>
+                            <td>5.5</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>71</td>
+                            <td>115071</td>
+                            <td>Đinh Văn Hiệp</td>
+                            <td>13/11/2010</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2.75</td>
+                            <td>9.75</td>
+                        </tr>
+                        <tr>
+                            <td>72</td>
+                            <td>115072</td>
+                            <td>Nguyễn Trung Hiếu</td>
+                            <td>23/06/2010</td>
+                            <td>4.75</td>
+                            <td>4.75</td>
+                            <td>5.75</td>
+                            <td>15.25</td>
+                        </tr>
+                        <tr>
+                            <td>73</td>
+                            <td>115073</td>
+                            <td>Bạch Thị Hoa</td>
+                            <td>24/10/2010</td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td>3.5</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>74</td>
+                            <td>115074</td>
+                            <td>Nguyễn Thị Hòa</td>
+                            <td>29/10/2010</td>
+                            <td>5.25</td>
+                            <td>4.25</td>
+                            <td>4.5</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>75</td>
+                            <td>115075</td>
+                            <td>Bùi Quang Hòa</td>
+                            <td>6/10/10</td>
+                            <td>7.5</td>
+                            <td>5.5</td>
+                            <td>4.25</td>
+                            <td>17.25</td>
+                        </tr>
+                        <tr>
+                            <td>76</td>
+                            <td>115076</td>
+                            <td>Lê Thị Thu Hoài</td>
+                            <td>3/4/10</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>1.75</td>
+                            <td>10.75</td>
+                        </tr>
+                        <tr>
+                            <td>77</td>
+                            <td>115077</td>
+                            <td>Nguyễn Việt Hoàng</td>
+                            <td>23/04/2010</td>
+                            <td>7.25</td>
+                            <td>4.25</td>
+                            <td>3.75</td>
+                            <td>15.25</td>
+                        </tr>
+                        <tr>
+                            <td>78</td>
+                            <td>115078</td>
+                            <td>Nguyễn Thị Hồng</td>
+                            <td>9/9/10</td>
+                            <td>4.5</td>
+                            <td>3.25</td>
+                            <td>2</td>
+                            <td>9.75</td>
+                        </tr>
+                        <tr>
+                            <td>79</td>
+                            <td>115079</td>
+                            <td>Phạm Thị Kim Huệ</td>
+                            <td>4/10/10</td>
+                            <td>7.25</td>
+                            <td>3.75</td>
+                            <td>3.5</td>
+                            <td>14.5</td>
+                        </tr>
+                        <tr>
+                            <td>80</td>
+                            <td>115080</td>
+                            <td>Nguyễn Sinh Hùng</td>
+                            <td>15/06/2010</td>
+                            <td>7</td>
+                            <td>6.25</td>
+                            <td>5.25</td>
+                            <td>18.5</td>
+                        </tr>
+                        <tr>
+                            <td>81</td>
+                            <td>115081</td>
+                            <td>Nguyễn Gia Hưng</td>
+                            <td>25/11/2010</td>
+                            <td>4.5</td>
+                            <td>4.25</td>
+                            <td>5.5</td>
+                            <td>14.25</td>
+                        </tr>
+                        <tr>
+                            <td>82</td>
+                            <td>115082</td>
+                            <td>Đặng Quang Huy</td>
+                            <td>23/09/2010</td>
+                            <td>5.75</td>
+                            <td>4.25</td>
+                            <td>7.25</td>
+                            <td>17.25</td>
+                        </tr>
+                        <tr>
+                            <td>83</td>
+                            <td>115083</td>
+                            <td>Chu Khánh Huyền</td>
+                            <td>4/4/10</td>
+                            <td>2.25</td>
+                            <td>2</td>
+                            <td>1.5</td>
+                            <td>5.75</td>
+                        </tr>
+                        <tr>
+                            <td>84</td>
+                            <td>115084</td>
+                            <td>Nguyễn Văn Huỳnh</td>
+                            <td>23/03/2010</td>
+                            <td>4.25</td>
+                            <td>2.75</td>
+                            <td>2.75</td>
+                            <td>9.75</td>
+                        </tr>
+                        <tr>
+                            <td>85</td>
+                            <td>115085</td>
+                            <td>Nguyễn Văn Khang</td>
+                            <td>23/04/2010</td>
+                            <td>6</td>
+                            <td>Bỏ Thi</td>
+                            <td>3</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>86</td>
+                            <td>115086</td>
+                            <td>Nguyễn Quốc Khánh</td>
+                            <td>13/11/2010</td>
+                            <td>6</td>
+                            <td>Bỏ Thi</td>
+                            <td>6</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>87</td>
+                            <td>115087</td>
+                            <td>Vương Đại Khánh</td>
+                            <td>1/3/10</td>
+                            <td>3.75</td>
+                            <td>4.25</td>
+                            <td>3.25</td>
+                            <td>11.25</td>
+                        </tr>
+                        <tr>
+                            <td>88</td>
+                            <td>115088</td>
+                            <td>Chu Viết Quốc Khánh</td>
+                            <td>2/9/10</td>
+                            <td>3.25</td>
+                            <td>3</td>
+                            <td>1.5</td>
+                            <td>7.75</td>
+                        </tr>
+                        <tr>
+                            <td>89</td>
+                            <td>115089</td>
+                            <td>Nguyễn Duy Khánh</td>
+                            <td></td>
+                            <td>2.75</td>
+                            <td>8.25</td>
+                            <td>8.25</td>
+                            <td>19.25</td>
+                        </tr>
+                        <tr>
+                            <td>90</td>
+                            <td>115090</td>
+                            <td>Nguyễn Đăng Khôi</td>
+                            <td>22/11/2010</td>
+                            <td>7.5</td>
+                            <td>2.75</td>
+                            <td>5.75</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>91</td>
+                            <td>115091</td>
+                            <td>Bạch Văn Khởi</td>
+                            <td>16/06/2010</td>
+                            <td>4</td>
+                            <td>3.75</td>
+                            <td>4.75</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>92</td>
+                            <td>115092</td>
+                            <td>Nguyễn Trung Kiên</td>
+                            <td>10/28/10</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>2.75</td>
+                            <td>8.75</td>
+                        </tr>
+                        <tr>
+                            <td>93</td>
+                            <td>115093</td>
+                            <td>Phạm Đức Kiệt</td>
+                            <td>24/11/2010</td>
+                            <td>5.5</td>
+                            <td>3.75</td>
+                            <td>5.5</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>94</td>
+                            <td>115094</td>
+                            <td>Nguyễn Tuấn Kiệt</td>
+                            <td>2/5/10</td>
+                            <td>2.5</td>
+                            <td>2.25</td>
+                            <td>2.75</td>
+                            <td>7.5</td>
+                        </tr>
+                        <tr>
+                            <td>95</td>
+                            <td>115095</td>
+                            <td>Đinh Tuấn Kiệt</td>
+                            <td>4/11/10</td>
+                            <td>3.25</td>
+                            <td>Bỏ Thi</td>
+                            <td>3</td>
+                            <td>6.25</td>
+                        </tr>
+                        <tr>
+                            <td>96</td>
+                            <td>115096</td>
+                            <td>Đặng Thị Diệu Kỳ</td>
+                            <td>11/11/10</td>
+                            <td>7.5</td>
+                            <td>3</td>
+                            <td>4.25</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>97</td>
+                            <td>115097</td>
+                            <td>Nguyễn Bảo Lâm</td>
+                            <td>13/06/2010</td>
+                            <td>3.25</td>
+                            <td>3</td>
+                            <td>4.75</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>98</td>
+                            <td>115098</td>
+                            <td>Nguyễn Thị Mai Lan</td>
+                            <td>21/07/2010</td>
+                            <td>7.25</td>
+                            <td>2.5</td>
+                            <td>4.5</td>
+                            <td>14.25</td>
+                        </tr>
+                        <tr>
+                            <td>99</td>
+                            <td>115099</td>
+                            <td>Phạm Thị Lan</td>
+                            <td>8/19/10</td>
+                            <td>7</td>
+                            <td>6.25</td>
+                            <td>7.75</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>115100</td>
+                            <td>Nguyễn Thị Lan</td>
+                            <td>12/8/10</td>
+                            <td>4</td>
+                            <td>4.5</td>
+                            <td>4</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>101</td>
+                            <td>115101</td>
+                            <td>Đặng Phương Linh</td>
+                            <td>26/04/2010</td>
+                            <td>5</td>
+                            <td>2.75</td>
+                            <td>3.5</td>
+                            <td>11.25</td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>115102</td>
+                            <td>Đinh Thị Thùy Linh</td>
+                            <td>27/02/2010</td>
+                            <td>5.75</td>
+                            <td>3.25</td>
+                            <td>6.5</td>
+                            <td>15.5</td>
+                        </tr>
+                        <tr>
+                            <td>103</td>
+                            <td>115103</td>
+                            <td>Nguyễn Thị Bảo Linh</td>
+                            <td>29/10/2010</td>
+                            <td>4.25</td>
+                            <td>3.25</td>
+                            <td>3.25</td>
+                            <td>10.75</td>
+                        </tr>
+                        <tr>
+                            <td>104</td>
+                            <td>115104</td>
+                            <td>Nguyễn Khánh Linh</td>
+                            <td>6/13/10</td>
+                            <td>5.5</td>
+                            <td>6.5</td>
+                            <td>7.5</td>
+                            <td>19.5</td>
+                        </tr>
+                        <tr>
+                            <td>105</td>
+                            <td>115105</td>
+                            <td>Đặng Hoàng Linh</td>
+                            <td>31/03/2010</td>
+                            <td>4.5</td>
+                            <td>3.75</td>
+                            <td>4.75</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>106</td>
+                            <td>115106</td>
+                            <td>Dương Ngọc Linh</td>
+                            <td>1/9/10</td>
+                            <td>9</td>
+                            <td>6.75</td>
+                            <td>5</td>
+                            <td>20.75</td>
+                        </tr>
+                        <tr>
+                            <td>107</td>
+                            <td>115107</td>
+                            <td>Nguyễn Hoàng Linh</td>
+                            <td>3/4/10</td>
+                            <td>7.5</td>
+                            <td>4.5</td>
+                            <td>7.25</td>
+                            <td>19.25</td>
+                        </tr>
+                        <tr>
+                            <td>108</td>
+                            <td>115108</td>
+                            <td>Nguyễn Nhật Linh</td>
+                            <td>6/10/10</td>
+                            <td>6.75</td>
+                            <td>6.25</td>
+                            <td>5</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>109</td>
+                            <td>115109</td>
+                            <td>Nguyễn Phương Linh</td>
+                            <td>5/10/10</td>
+                            <td>6.75</td>
+                            <td>5.25</td>
+                            <td>5.75</td>
+                            <td>17.75</td>
+                        </tr>
+                        <tr>
+                            <td>110</td>
+                            <td>115110</td>
+                            <td>Đào Ngọc Linh</td>
+                            <td></td>
+                            <td>7.5</td>
+                            <td>6.5</td>
+                            <td>7.5</td>
+                            <td>21.5</td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>115111</td>
+                            <td>Đỗ Thị Thùy Linh</td>
+                            <td>26/07/2010</td>
+                            <td>bỏ thi</td>
+                            <td>bỏ thi</td>
+                            <td>bỏ thi</td>
+                            <td>bỏ thi</td>
+                        </tr>
+                        <tr>
+                            <td>112</td>
+                            <td>115112</td>
+                            <td>Nguyễn Đức Lợi</td>
+                            <td>1/8/10</td>
+                            <td>7.25</td>
+                            <td>3.75</td>
+                            <td>7</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>113</td>
+                            <td>115113</td>
+                            <td>Bùi Nguyễn Bảo Long</td>
+                            <td>25/04/2010</td>
+                            <td>7.25</td>
+                            <td>2.75</td>
+                            <td>4.5</td>
+                            <td>14.5</td>
+                        </tr>
+                        <tr>
+                            <td>114</td>
+                            <td>115114</td>
+                            <td>Đặng Văn Long</td>
+                            <td>8/7/10</td>
+                            <td>3.75</td>
+                            <td>2.5</td>
+                            <td>3</td>
+                            <td>9.25</td>
+                        </tr>
+                        <tr>
+                            <td>115</td>
+                            <td>115115</td>
+                            <td>Hà Văn Long</td>
+                            <td>24/09/2010</td>
+                            <td>4.5</td>
+                            <td>1.75</td>
+                            <td>6</td>
+                            <td>12.25</td>
+                        </tr>
+                        <tr>
+                            <td>116</td>
+                            <td>115116</td>
+                            <td>Nguyễn Danh Long</td>
+                            <td>12/12/10</td>
+                            <td>4.25</td>
+                            <td>1.75</td>
+                            <td>3.75</td>
+                            <td>9.75</td>
+                        </tr>
+                        <tr>
+                            <td>117</td>
+                            <td>115117</td>
+                            <td>Nguyễn Hoàng Long</td>
+                            <td>20/10/2010</td>
+                            <td>6.25</td>
+                            <td>2.5</td>
+                            <td>5</td>
+                            <td>13.75</td>
+                        </tr>
+                        <tr>
+                            <td>118</td>
+                            <td>115118</td>
+                            <td>Nguyễn Minh Long</td>
+                            <td>18/10/2010</td>
+                            <td>6</td>
+                            <td>5.75</td>
+                            <td>4.5</td>
+                            <td>16.25</td>
+                        </tr>
+                        <tr>
+                            <td>119</td>
+                            <td>115119</td>
+                            <td>Nguyễn Tuấn Lương</td>
+                            <td>5/9/10</td>
+                            <td>7.5</td>
+                            <td>5</td>
+                            <td>9.25</td>
+                            <td>21.75</td>
+                        </tr>
+                        <tr>
+                            <td>120</td>
+                            <td>115120</td>
+                            <td>Bùi Thị Thảo Ly</td>
+                            <td>21/12/2010</td>
+                            <td>8.5</td>
+                            <td>3.25</td>
+                            <td>5.75</td>
+                            <td>17.5</td>
+                        </tr>
+                        <tr>
+                            <td>121</td>
+                            <td>115121</td>
+                            <td>Nguyễn Trần Tuyết Mai</td>
+                            <td>18/11/2010</td>
+                            <td>8.5</td>
+                            <td>4.25</td>
+                            <td>4.75</td>
+                            <td>17.5</td>
+                        </tr>
+                        <tr>
+                            <td>122</td>
+                            <td>115122</td>
+                            <td>Nguyễn Văn Mạnh</td>
+                            <td>2/11/09</td>
+                            <td>2.5</td>
+                            <td>2.25</td>
+                            <td>4</td>
+                            <td>8.75</td>
+                        </tr>
+                        <tr>
+                            <td>123</td>
+                            <td>115123</td>
+                            <td>Dương Bảo Minh</td>
+                            <td>17/08/2010</td>
+                            <td>1.75</td>
+                            <td>3.5</td>
+                            <td>3.5</td>
+                            <td>8.75</td>
+                        </tr>
+                        <tr>
+                            <td>124</td>
+                            <td>115124</td>
+                            <td>Nguyễn Công Minh</td>
+                            <td>30/01/2010</td>
+                            <td>6.5</td>
+                            <td>4.75</td>
+                            <td>6.25</td>
+                            <td>17.5</td>
+                        </tr>
+                        <tr>
+                            <td>125</td>
+                            <td>115125</td>
+                            <td>Nguyễn Trà My</td>
+                            <td>28/10/2010</td>
+                            <td>5.25</td>
+                            <td>3.25</td>
+                            <td>4.5</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>126</td>
+                            <td>115126</td>
+                            <td>Đinh Thị Trà My</td>
+                            <td>8/9/10</td>
+                            <td>3</td>
+                            <td>2.25</td>
+                            <td>6.75</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>127</td>
+                            <td>115127</td>
+                            <td>Nguyễn Thị Trà My</td>
+                            <td>30/08/2010</td>
+                            <td>4.5</td>
+                            <td>2.75</td>
+                            <td>5.75</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>128</td>
+                            <td>115128</td>
+                            <td>Ngô Hoàng Nam</td>
+                            <td>15/01/2010</td>
+                            <td>2</td>
+                            <td>2.25</td>
+                            <td>3.5</td>
+                            <td>7.75</td>
+                        </tr>
+                        <tr>
+                            <td>129</td>
+                            <td>115129</td>
+                            <td>Phạm Phương Nam</td>
+                            <td>11/1/10</td>
+                            <td>2.25</td>
+                            <td>2</td>
+                            <td>1.5</td>
+                            <td>5.75</td>
+                        </tr>
+                        <tr>
+                            <td>130</td>
+                            <td>115130</td>
+                            <td>Nguyễn Hoàng Nam</td>
+                            <td>11/2/10</td>
+                            <td>1.75</td>
+                            <td>4.5</td>
+                            <td>2.25</td>
+                            <td>8.5</td>
+                        </tr>
+                        <tr>
+                            <td>131</td>
+                            <td>115131</td>
+                            <td>Nguyễn Phương Nam</td>
+                            <td>6/7/10</td>
+                            <td>5.5</td>
+                            <td>2</td>
+                            <td>5.75</td>
+                            <td>13.25</td>
+                        </tr>
+                        <tr>
+                            <td>132</td>
+                            <td>115132</td>
+                            <td>Nguyễn Minh Nam</td>
+                            <td>18/09/2010</td>
+                            <td>2.5</td>
+                            <td>3.25</td>
+                            <td>3.75</td>
+                            <td>9.5</td>
+                        </tr>
+                        <tr>
+                            <td>133</td>
+                            <td>115133</td>
+                            <td>Nguyễn Thị Bảo Ngân</td>
+                            <td>13/02/2010</td>
+                            <td>7.25</td>
+                            <td>7.5</td>
+                            <td>3.25</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>134</td>
+                            <td>115134</td>
+                            <td>Nguyễn Văn Nghiệp</td>
+                            <td>5/5/10</td>
+                            <td>3.25</td>
+                            <td>4</td>
+                            <td>3.75</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>135</td>
+                            <td>115135</td>
+                            <td>Nguyễn Lâm Bảo Ngọc</td>
+                            <td>26/11/2010</td>
+                            <td>5.25</td>
+                            <td>4.25</td>
+                            <td>4</td>
+                            <td>13.5</td>
+                        </tr>
+                        <tr>
+                            <td>136</td>
+                            <td>115136</td>
+                            <td>Nguyễn Mỹ Ngọc</td>
+                            <td>31/01/2010</td>
+                            <td>8</td>
+                            <td>8.5</td>
+                            <td>8.25</td>
+                            <td>24.75</td>
+                        </tr>
+                        <tr>
+                            <td>137</td>
+                            <td>115137</td>
+                            <td>Trần Minh Ngọc</td>
+                            <td>20/08/2010</td>
+                            <td>8.5</td>
+                            <td>8</td>
+                            <td>7.75</td>
+                            <td>24.25</td>
+                        </tr>
+                        <tr>
+                            <td>138</td>
+                            <td>115138</td>
+                            <td>Nguyễn Bảo An Nguyên</td>
+                            <td>30/01/2010</td>
+                            <td>2.25</td>
+                            <td>2.75</td>
+                            <td>2.25</td>
+                            <td>7.25</td>
+                        </tr>
+                        <tr>
+                            <td>139</td>
+                            <td>115139</td>
+                            <td>Nguyễn Thị Nguyên</td>
+                            <td>5/6/10</td>
+                            <td>2</td>
+                            <td>2.25</td>
+                            <td>1.75</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>140</td>
+                            <td>115140</td>
+                            <td>Phạm Thị Minh Nguyệt</td>
+                            <td>19/08/2010</td>
+                            <td>5.5</td>
+                            <td>3.25</td>
+                            <td>6</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>141</td>
+                            <td>115141</td>
+                            <td>Nguyễn Thu Nhàn</td>
+                            <td>22/12/2010</td>
+                            <td>7.75</td>
+                            <td>4.25</td>
+                            <td>5.75</td>
+                            <td>17.75</td>
+                        </tr>
+                        <tr>
+                            <td>142</td>
+                            <td>115142</td>
+                            <td>Phạm Thị Ngọc Nhi</td>
+                            <td>8/12/10</td>
+                            <td>5.5</td>
+                            <td>2.75</td>
+                            <td>4.75</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>143</td>
+                            <td>115143</td>
+                            <td>Nguyễn Thị Yến Nhi</td>
+                            <td>14/12/2010</td>
+                            <td>4</td>
+                            <td>2.25</td>
+                            <td>6</td>
+                            <td>12.25</td>
+                        </tr>
+                        <tr>
+                            <td>144</td>
+                            <td>115144</td>
+                            <td>Nguyễn Thị Yến Nhi</td>
+                            <td>10/25/10</td>
+                            <td>7.75</td>
+                            <td>3.25</td>
+                            <td>5.5</td>
+                            <td>16.5</td>
+                        </tr>
+                        <tr>
+                            <td>145</td>
+                            <td>115145</td>
+                            <td>Lương Thị Minh Như</td>
+                            <td>5/16/10</td>
+                            <td>6.75</td>
+                            <td>3.25</td>
+                            <td>4.75</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>146</td>
+                            <td>115146</td>
+                            <td>Phạm Vũ Tâm Như</td>
+                            <td>4/27/10</td>
+                            <td>7.25</td>
+                            <td>6.75</td>
+                            <td>6</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>147</td>
+                            <td>115147</td>
+                            <td>Nguyễn Gia Như</td>
+                            <td>23/10/2010</td>
+                            <td>7.75</td>
+                            <td>2.5</td>
+                            <td>6</td>
+                            <td>16.25</td>
+                        </tr>
+                        <tr>
+                            <td>148</td>
+                            <td>115148</td>
+                            <td>Ngô Thị Hồng Nhung</td>
+                            <td>3/11/10</td>
+                            <td>5.5</td>
+                            <td>2.75</td>
+                            <td>3.75</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>149</td>
+                            <td>115149</td>
+                            <td>Phạm Thị Kiều Oanh</td>
+                            <td>27/08/2010</td>
+                            <td>5</td>
+                            <td>2.25</td>
+                            <td>4.5</td>
+                            <td>11.75</td>
+                        </tr>
+                        <tr>
+                            <td>150</td>
+                            <td>115150</td>
+                            <td>Nguyễn Thị Oanh</td>
+                            <td>3/3/10</td>
+                            <td>7.5</td>
+                            <td>5</td>
+                            <td>6.75</td>
+                            <td>19.25</td>
+                        </tr>
+                        <tr>
+                            <td>151</td>
+                            <td>115151</td>
+                            <td>Nguyễn Duy Phát</td>
+                            <td>8/15/10</td>
+                            <td>6</td>
+                            <td>3.5</td>
+                            <td>6.25</td>
+                            <td>15.75</td>
+                        </tr>
+                        <tr>
+                            <td>152</td>
+                            <td>115152</td>
+                            <td>Nguyễn Trọng Phát</td>
+                            <td>2/2/10</td>
+                            <td>4.5</td>
+                            <td>2.5</td>
+                            <td>5.25</td>
+                            <td>12.25</td>
+                        </tr>
+                        <tr>
+                            <td>153</td>
+                            <td>115153</td>
+                            <td>Hoàng Đức Phát</td>
+                            <td>18/01/2010</td>
+                            <td>4.75</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>10.75</td>
+                        </tr>
+                        <tr>
+                            <td>154</td>
+                            <td>115154</td>
+                            <td>Nguyễn Nguyên Phong</td>
+                            <td>4/10/10</td>
+                            <td>8</td>
+                            <td>3</td>
+                            <td>5.5</td>
+                            <td>16.5</td>
+                        </tr>
+                        <tr>
+                            <td>155</td>
+                            <td>115155</td>
+                            <td>Phạm Minh Phong</td>
+                            <td>29/11/2010</td>
+                            <td>5.75</td>
+                            <td>2</td>
+                            <td>2.75</td>
+                            <td>10.5</td>
+                        </tr>
+                        <tr>
+                            <td>156</td>
+                            <td>115156</td>
+                            <td>Nguyễn Nam Phong</td>
+                            <td>1/23/10</td>
+                            <td>4.75</td>
+                            <td>3.25</td>
+                            <td>6.75</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>157</td>
+                            <td>115157</td>
+                            <td>Nguyễn Vũ Phong</td>
+                            <td>23/03/2010</td>
+                            <td>8.5</td>
+                            <td>4</td>
+                            <td>4.75</td>
+                            <td>17.25</td>
+                        </tr>
+                        <tr>
+                            <td>158</td>
+                            <td>115158</td>
+                            <td>Trần Quang Phú</td>
+                            <td>9/6/10</td>
+                            <td>4.5</td>
+                            <td>3.75</td>
+                            <td>3.5</td>
+                            <td>11.75</td>
+                        </tr>
+                        <tr>
+                            <td>159</td>
+                            <td>115159</td>
+                            <td>Nguyễn Mai Phương</td>
+                            <td>6/2/10</td>
+                            <td>7.25</td>
+                            <td>3.75</td>
+                            <td>5.5</td>
+                            <td>16.5</td>
+                        </tr>
+                        <tr>
+                            <td>160</td>
+                            <td>115160</td>
+                            <td>Phạm Thị Mai Phượng</td>
+                            <td>20/07/2010</td>
+                            <td>5.25</td>
+                            <td>3</td>
+                            <td>2.75</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>161</td>
+                            <td>115161</td>
+                            <td>Nguyễn Thị Phượng</td>
+                            <td>30/07/2010</td>
+                            <td>6</td>
+                            <td>4.25</td>
+                            <td>5.5</td>
+                            <td>15.75</td>
+                        </tr>
+                        <tr>
+                            <td>162</td>
+                            <td>115162</td>
+                            <td>Lê Kim Phượng</td>
+                            <td>4/6/10</td>
+                            <td>8.5</td>
+                            <td>4.5</td>
+                            <td>7</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>163</td>
+                            <td>115163</td>
+                            <td>Đặng Văn Quân</td>
+                            <td>17/04/2010</td>
+                            <td>3</td>
+                            <td>3.25</td>
+                            <td>5.25</td>
+                            <td>11.5</td>
+                        </tr>
+                        <tr>
+                            <td>164</td>
+                            <td>115164</td>
+                            <td>Nguyễn Vũ Quang</td>
+                            <td>4/9/10</td>
+                            <td>3.5</td>
+                            <td>2</td>
+                            <td>4.5</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>165</td>
+                            <td>115165</td>
+                            <td>Nguyễn Diễm Quỳnh</td>
+                            <td>5/28/10</td>
+                            <td>6.25</td>
+                            <td>5.25</td>
+                            <td>6</td>
+                            <td>17.5</td>
+                        </tr>
+                        <tr>
+                            <td>166</td>
+                            <td>115166</td>
+                            <td>Đinh Thị Khánh Quỳnh</td>
+                            <td>14/06/2010</td>
+                            <td>8</td>
+                            <td>7.75</td>
+                            <td>6.5</td>
+                            <td>22.25</td>
+                        </tr>
+                        <tr>
+                            <td>167</td>
+                            <td>115167</td>
+                            <td>Nguyễn Minh Sang</td>
+                            <td>11/5/10</td>
+                            <td>5.75</td>
+                            <td>3.75</td>
+                            <td>2</td>
+                            <td>11.5</td>
+                        </tr>
+                        <tr>
+                            <td>168</td>
+                            <td>115168</td>
+                            <td>Phạm Đức Sang</td>
+                            <td>1/2/10</td>
+                            <td>7.5</td>
+                            <td>5.5</td>
+                            <td>5.25</td>
+                            <td>18.25</td>
+                        </tr>
+                        <tr>
+                            <td>169</td>
+                            <td>115169</td>
+                            <td>Nguyễn Trọng Sang</td>
+                            <td>24/09/2010</td>
+                            <td>6</td>
+                            <td>2.75</td>
+                            <td>4</td>
+                            <td>12.75</td>
+                        </tr>
+                        <tr>
+                            <td>170</td>
+                            <td>115170</td>
+                            <td>Hoàng Chí Tài</td>
+                            <td>24/04/2010</td>
+                            <td>6.75</td>
+                            <td>Bỏ Thi</td>
+                            <td>8</td>
+                            <td>14.75</td>
+                        </tr>
+                        <tr>
+                            <td>171</td>
+                            <td>115171</td>
+                            <td>Phạm Minh Tấn</td>
+                            <td>20/07/2010</td>
+                            <td>5.5</td>
+                            <td>3.25</td>
+                            <td>7</td>
+                            <td>15.75</td>
+                        </tr>
+                        <tr>
+                            <td>172</td>
+                            <td>115172</td>
+                            <td>Phạm Ngọc Thái</td>
+                            <td>4/11/10</td>
+                            <td>3.5</td>
+                            <td>2</td>
+                            <td>4.75</td>
+                            <td>10.25</td>
+                        </tr>
+                        <tr>
+                            <td>173</td>
+                            <td>115173</td>
+                            <td>Nguyễn Quyết Thắng</td>
+                            <td>14/01/2010</td>
+                            <td>0.5</td>
+                            <td>1.5</td>
+                            <td>2</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>174</td>
+                            <td>115174</td>
+                            <td>Nguyễn Quyết Thắng</td>
+                            <td>20/11/2010</td>
+                            <td>4</td>
+                            <td>2.25</td>
+                            <td>3.25</td>
+                            <td>9.5</td>
+                        </tr>
+                        <tr>
+                            <td>175</td>
+                            <td>115175</td>
+                            <td>Nguyễn Quyết Thắng</td>
+                            <td>6/13/10</td>
+                            <td>6.25</td>
+                            <td>4.25</td>
+                            <td>5.5</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>176</td>
+                            <td>115176</td>
+                            <td>Nguyễn Minh Thanh</td>
+                            <td>5/3/10</td>
+                            <td>4</td>
+                            <td>2.75</td>
+                            <td>4.25</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>177</td>
+                            <td>115177</td>
+                            <td>Nguyễn Thị Phương Thảo</td>
+                            <td>14/04/2010</td>
+                            <td>7.25</td>
+                            <td>2.75</td>
+                            <td>3.5</td>
+                            <td>13.5</td>
+                        </tr>
+                        <tr>
+                            <td>178</td>
+                            <td>115178</td>
+                            <td>Bạch Phương Thảo</td>
+                            <td>8/19/10</td>
+                            <td>7.5</td>
+                            <td>2</td>
+                            <td>5.75</td>
+                            <td>15.25</td>
+                        </tr>
+                        <tr>
+                            <td>179</td>
+                            <td>115179</td>
+                            <td>Bạch Thị Thanh Thảo</td>
+                            <td>4/1/10</td>
+                            <td>5.75</td>
+                            <td>4.5</td>
+                            <td>4.75</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>180</td>
+                            <td>115180</td>
+                            <td>Nguyễn Thị Phương Thảo</td>
+                            <td>2/15/10</td>
+                            <td>7.25</td>
+                            <td>3.5</td>
+                            <td>6</td>
+                            <td>16.75</td>
+                        </tr>
+                        <tr>
+                            <td>181</td>
+                            <td>115181</td>
+                            <td>Nguyễn Thị Thanh Thảo</td>
+                            <td>10/13/10</td>
+                            <td>6.25</td>
+                            <td>2.5</td>
+                            <td>3.75</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>182</td>
+                            <td>115182</td>
+                            <td>Nguyễn Thị Phương Thảo</td>
+                            <td>5/24/10</td>
+                            <td>7.25</td>
+                            <td>3.25</td>
+                            <td>5</td>
+                            <td>15.5</td>
+                        </tr>
+                        <tr>
+                            <td>183</td>
+                            <td>115183</td>
+                            <td>Nguyễn Phương Thảo</td>
+                            <td>24/02/2010</td>
+                            <td>7.5</td>
+                            <td>7</td>
+                            <td>4.25</td>
+                            <td>18.75</td>
+                        </tr>
+                        <tr>
+                            <td>184</td>
+                            <td>115184</td>
+                            <td>Nguyễn Thị Thơm Thảo</td>
+                            <td>4/23/10</td>
+                            <td>7</td>
+                            <td>4.5</td>
+                            <td>4.25</td>
+                            <td>15.75</td>
+                        </tr>
+                        <tr>
+                            <td>185</td>
+                            <td>115185</td>
+                            <td>Nguyễn Thanh Thảo</td>
+                            <td>28/07/2010</td>
+                            <td>7</td>
+                            <td>3.75</td>
+                            <td>5.75</td>
+                            <td>16.5</td>
+                        </tr>
+                        <tr>
+                            <td>186</td>
+                            <td>115186</td>
+                            <td>Nguyễn Thị Thanh Thảo</td>
+                            <td>22/04/2010</td>
+                            <td>5.75</td>
+                            <td>5.5</td>
+                            <td>9.75</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>187</td>
+                            <td>115187</td>
+                            <td>Nguyễn Đức Thịnh</td>
+                            <td>27/03/2010</td>
+                            <td>1.5</td>
+                            <td>2.25</td>
+                            <td>3.75</td>
+                            <td>7.5</td>
+                        </tr>
+                        <tr>
+                            <td>188</td>
+                            <td>115188</td>
+                            <td>Nguyễn Đức Thịnh</td>
+                            <td>3/5/10</td>
+                            <td>1.25</td>
+                            <td>2.75</td>
+                            <td>3.25</td>
+                            <td>7.25</td>
+                        </tr>
+                        <tr>
+                            <td>189</td>
+                            <td>115189</td>
+                            <td>Nguyễn Văn Thịnh</td>
+                            <td>5/10/10</td>
+                            <td>2.5</td>
+                            <td>2.75</td>
+                            <td>2.75</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>190</td>
+                            <td>115190</td>
+                            <td>Phạm Đức Thịnh</td>
+                            <td>28/10/2010</td>
+                            <td>3.5</td>
+                            <td>3</td>
+                            <td>5.75</td>
+                            <td>12.25</td>
+                        </tr>
+                        <tr>
+                            <td>191</td>
+                            <td>115191</td>
+                            <td>Chu Minh Thư</td>
+                            <td>8/11/10</td>
+                            <td>6</td>
+                            <td>3.5</td>
+                            <td>4.5</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>192</td>
+                            <td>115192</td>
+                            <td>Phạm Minh Thư</td>
+                            <td>8/16/10</td>
+                            <td>5.75</td>
+                            <td>2.5</td>
+                            <td>3</td>
+                            <td>11.25</td>
+                        </tr>
+                        <tr>
+                            <td>193</td>
+                            <td>115193</td>
+                            <td>Lê Anh Thư</td>
+                            <td>4/7/10</td>
+                            <td>5.75</td>
+                            <td>6.5</td>
+                            <td>4.25</td>
+                            <td>16.5</td>
+                        </tr>
+                        <tr>
+                            <td>194</td>
+                            <td>115194</td>
+                            <td>Nguyễn Thị Anh Thư</td>
+                            <td>4/27/10</td>
+                            <td>7.5</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>18.5</td>
+                        </tr>
+                        <tr>
+                            <td>195</td>
+                            <td>115195</td>
+                            <td>Chu văn Thuận</td>
+                            <td>7/22/10</td>
+                            <td>3.75</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>10.75</td>
+                        </tr>
+                        <tr>
+                            <td>196</td>
+                            <td>115196</td>
+                            <td>Nguyễn Thị Thúy</td>
+                            <td>25/05/2010</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>5.5</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>197</td>
+                            <td>115197</td>
+                            <td>Nguyễn Phương Thúy</td>
+                            <td>9/28/10</td>
+                            <td>5</td>
+                            <td>3.75</td>
+                            <td>4</td>
+                            <td>12.75</td>
+                        </tr>
+                        <tr>
+                            <td>198</td>
+                            <td>115198</td>
+                            <td>Đào Thị Bích Thủy</td>
+                            <td>30/03/2010</td>
+                            <td>8</td>
+                            <td>3.25</td>
+                            <td>5</td>
+                            <td>16.25</td>
+                        </tr>
+                        <tr>
+                            <td>199</td>
+                            <td>115199</td>
+                            <td>Phạm Minh Tiến</td>
+                            <td>9/27/10</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>115200</td>
+                            <td>Hoàng Thùy Trang</td>
+                            <td>8/2/10</td>
+                            <td>7.5</td>
+                            <td>4.5</td>
+                            <td>5.72</td>
+                            <td>17.72</td>
+                        </tr>
+                        <tr>
+                            <td>201</td>
+                            <td>115201</td>
+                            <td>Phạm Thị Thảo Trang</td>
+                            <td>11/20/10</td>
+                            <td>6.5</td>
+                            <td>4.25</td>
+                            <td>4.75</td>
+                            <td>15.5</td>
+                        </tr>
+                        <tr>
+                            <td>202</td>
+                            <td>115202</td>
+                            <td>Nguyễn Minh Triết</td>
+                            <td>8/27/10</td>
+                            <td>6.5</td>
+                            <td>1.75</td>
+                            <td>3.75</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>203</td>
+                            <td>115203</td>
+                            <td>Nguyễn Thị Phương Trinh</td>
+                            <td>22/12/2010</td>
+                            <td>5</td>
+                            <td>2.25</td>
+                            <td>4.75</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>204</td>
+                            <td>115204</td>
+                            <td>Nguyễn Duy Trọng</td>
+                            <td>11/20/10</td>
+                            <td>2.5</td>
+                            <td>1.75</td>
+                            <td>1.25</td>
+                            <td>5.5</td>
+                        </tr>
+                        <tr>
+                            <td>205</td>
+                            <td>115205</td>
+                            <td>Mai Thị Kiều Trúc</td>
+                            <td>3/8/10</td>
+                            <td>4.5</td>
+                            <td>2.25</td>
+                            <td>3.5</td>
+                            <td>10.25</td>
+                        </tr>
+                        <tr>
+                            <td>206</td>
+                            <td>115206</td>
+                            <td>Lưu Thị Thanh Trúc</td>
+                            <td>11/13/10</td>
+                            <td>8</td>
+                            <td>6.25</td>
+                            <td>6.5</td>
+                            <td>20.75</td>
+                        </tr>
+                        <tr>
+                            <td>207</td>
+                            <td>115207</td>
+                            <td>Vũ Thanh Trúc</td>
+                            <td>9/16/10</td>
+                            <td>8.25</td>
+                            <td>8.75</td>
+                            <td>5.75</td>
+                            <td>22.75</td>
+                        </tr>
+                        <tr>
+                            <td>208</td>
+                            <td>115208</td>
+                            <td>Đặng Thành Trung</td>
+                            <td>8/1/10</td>
+                            <td>7</td>
+                            <td>3.75</td>
+                            <td>5</td>
+                            <td>15.75</td>
+                        </tr>
+                        <tr>
+                            <td>209</td>
+                            <td>115209</td>
+                            <td>Đỗ Xuân Trường</td>
+                            <td>12/13/10</td>
+                            <td>6.5</td>
+                            <td>9</td>
+                            <td>6.5</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>210</td>
+                            <td>115210</td>
+                            <td>Nguyễn Tuấn Tú</td>
+                            <td>18/10/2010</td>
+                            <td>6.75</td>
+                            <td>2.25</td>
+                            <td>3.25</td>
+                            <td>12.25</td>
+                        </tr>
+                        <tr>
+                            <td>211</td>
+                            <td>115211</td>
+                            <td>Nguyễn Văn Tú</td>
+                            <td>7/7/10</td>
+                            <td>4.25</td>
+                            <td>3.25</td>
+                            <td>2.75</td>
+                            <td>10.25</td>
+                        </tr>
+                        <tr>
+                            <td>212</td>
+                            <td>115212</td>
+                            <td>Trần Anh Tuấn</td>
+                            <td>14/04/2010</td>
+                            <td>6.75</td>
+                            <td>2.75</td>
+                            <td>5</td>
+                            <td>14.5</td>
+                        </tr>
+                        <tr>
+                            <td>213</td>
+                            <td>115213</td>
+                            <td>Nguyễn Anh Tuấn</td>
+                            <td>1/22/10</td>
+                            <td>7.25</td>
+                            <td>5.5</td>
+                            <td>5</td>
+                            <td>17.75</td>
+                        </tr>
+                        <tr>
+                            <td>214</td>
+                            <td>115214</td>
+                            <td>Mai Đức Tùng</td>
+                            <td>31/08/2010</td>
+                            <td>6.5</td>
+                            <td>4</td>
+                            <td>3.75</td>
+                            <td>14.25</td>
+                        </tr>
+                        <tr>
+                            <td>215</td>
+                            <td>115215</td>
+                            <td>Nguyễn Quang Tùng</td>
+                            <td>4/5/10</td>
+                            <td>6</td>
+                            <td>2.25</td>
+                            <td>5.25</td>
+                            <td>13.5</td>
+                        </tr>
+                        <tr>
+                            <td>216</td>
+                            <td>115216</td>
+                            <td>Phạm Văn Tùng</td>
+                            <td>23/03/2010</td>
+                            <td>5.75</td>
+                            <td>2.25</td>
+                            <td>3.25</td>
+                            <td>11.25</td>
+                        </tr>
+                        <tr>
+                            <td>217</td>
+                            <td>115217</td>
+                            <td>Nguyễn Thị Kim Tuyền</td>
+                            <td>11/2/10</td>
+                            <td>4.25</td>
+                            <td>1.5</td>
+                            <td>3</td>
+                            <td>8.75</td>
+                        </tr>
+                        <tr>
+                            <td>218</td>
+                            <td>115218</td>
+                            <td>Đặng Thị Hồng Vân</td>
+                            <td>11/10/10</td>
+                            <td>5.25</td>
+                            <td>5</td>
+                            <td>4.25</td>
+                            <td>14.5</td>
+                        </tr>
+                        <tr>
+                            <td>219</td>
+                            <td>115219</td>
+                            <td>Hoàng Kim Vân</td>
+                            <td>20/12/2010</td>
+                            <td>3.5</td>
+                            <td>3</td>
+                            <td>4.75</td>
+                            <td>11.25</td>
+                        </tr>
+                        <tr>
+                            <td>220</td>
+                            <td>115220</td>
+                            <td>Đặng Thị Hà Vi</td>
+                            <td>19/08/2010</td>
+                            <td>4.25</td>
+                            <td>2.5</td>
+                            <td>3</td>
+                            <td>9.75</td>
+                        </tr>
+                        <tr>
+                            <td>221</td>
+                            <td>115221</td>
+                            <td>Lê Quốc Việt</td>
+                            <td>27/12/2010</td>
+                            <td>5.25</td>
+                            <td>4.25</td>
+                            <td>5.75</td>
+                            <td>15.25</td>
+                        </tr>
+                        <tr>
+                            <td>222</td>
+                            <td>115222</td>
+                            <td>Nguyễn Hoàng Việt</td>
+                            <td>27/07/2010</td>
+                            <td>5.75</td>
+                            <td>4.75</td>
+                            <td>3.75</td>
+                            <td>14.25</td>
+                        </tr>
+                        <tr>
+                            <td>223</td>
+                            <td>115223</td>
+                            <td>Hoàng Quốc Việt</td>
+                            <td>21/06/2010</td>
+                            <td>5</td>
+                            <td>2.25</td>
+                            <td>5.25</td>
+                            <td>12.5</td>
+                        </tr>
+                        <tr>
+                            <td>224</td>
+                            <td>115224</td>
+                            <td>Phạm Văn Đức Việt</td>
+                            <td>13/11/2010</td>
+                            <td>2.25</td>
+                            <td>2.5</td>
+                            <td>4.25</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>225</td>
+                            <td>115225</td>
+                            <td>Đỗ Quang Vinh</td>
+                            <td>1/16/10</td>
+                            <td>5.25</td>
+                            <td>2.25</td>
+                            <td>4.25</td>
+                            <td>11.75</td>
+                        </tr>
+                        <tr>
+                            <td>226</td>
+                            <td>115226</td>
+                            <td>Lưu Quang Vũ</td>
+                            <td>22/05/2010</td>
+                            <td>4.75</td>
+                            <td>3.25</td>
+                            <td>5.25</td>
+                            <td>13.25</td>
+                        </tr>
+                        <tr>
+                            <td>227</td>
+                            <td>115227</td>
+                            <td>Nguyễn Thị Phương Vy</td>
+                            <td>6/21/10</td>
+                            <td>7.75</td>
+                            <td>5</td>
+                            <td>6.25</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>228</td>
+                            <td>115228</td>
+                            <td>Nguyễn Hà Vy</td>
+                            <td>12/25/10</td>
+                            <td>7</td>
+                            <td>3.25</td>
+                            <td>3</td>
+                            <td>13.25</td>
+                        </tr>
+                        <tr>
+                            <td>229</td>
+                            <td>115229</td>
+                            <td>Phạm Phương Vy</td>
+                            <td>23/08/2010</td>
+                            <td>6.75</td>
+                            <td>4.25</td>
+                            <td>4.75</td>
+                            <td>15.75</td>
+                        </tr>
+                        <tr>
+                            <td>230</td>
+                            <td>115230</td>
+                            <td>Nguyễn Ánh Tường Vy</td>
+                            <td></td>
+                            <td>8.25</td>
+                            <td>4.25</td>
+                            <td>6</td>
+                            <td>18.5</td>
+                        </tr>
+                        <tr>
+                            <td>231</td>
+                            <td>115231</td>
+                            <td>Nguyễn Thị Yến</td>
+                            <td>5/4/10</td>
+                            <td>6</td>
+                            <td>2.5</td>
+                            <td>5.25</td>
+                            <td>13.75</td>
+                        </tr>
+                        <tr>
+                            <td>232</td>
+                            <td>115232</td>
+                            <td>Vũ Thị Hải Yến</td>
+                            <td>2/17/10</td>
+                            <td>7.75</td>
+                            <td>4.5</td>
+                            <td>4.75</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>233</td>
+                            <td>115233</td>
+                            <td>Phạm Hải Yến</td>
+                            <td>7/6/10</td>
+                            <td>7.75</td>
+                            <td>4.5</td>
+                            <td>7</td>
+                            <td>19.25</td>
+                        </tr>
+                        <tr>
+                            <td>234</td>
+                            <td>115234</td>
+                            <td>Dương Hoàng Anh</td>
+                            <td>27/09/2010</td>
+                            <td>5.5</td>
+                            <td>Ko Thi</td>
+                            <td>5.25</td>
+                            <td>10.75</td>
+                        </tr>
+                        <tr>
+                            <td>235</td>
+                            <td>115235</td>
+                            <td>Dương Gia Bảo</td>
+                            <td>7/1/10</td>
+                            <td>5.75</td>
+                            <td>Ko Thi</td>
+                            <td>5.25</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>236</td>
+                            <td>115236</td>
+                            <td>Hoàng Cẩm Bình</td>
+                            <td>27/01/2010</td>
+                            <td>4.75</td>
+                            <td>Ko Thi</td>
+                            <td>3</td>
+                            <td>7.75</td>
+                        </tr>
+                        <tr>
+                            <td>237</td>
+                            <td>115237</td>
+                            <td>Nguyễn Tiến Đạt</td>
+                            <td>10/10/10</td>
+                            <td>5.25</td>
+                            <td>Ko Thi</td>
+                            <td>1.75</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>238</td>
+                            <td>115238</td>
+                            <td>Nguyễn Minh Đức</td>
+                            <td>11/11/10</td>
+                            <td>5.75</td>
+                            <td>Ko Thi</td>
+                            <td>5.5</td>
+                            <td>11.25</td>
+                        </tr>
+                        <tr>
+                            <td>239</td>
+                            <td>115239</td>
+                            <td>Nguyễn Minh Kha</td>
+                            <td>25/09/2010</td>
+                            <td>5.5</td>
+                            <td>Ko Thi</td>
+                            <td>6.75</td>
+                            <td>12.25</td>
+                        </tr>
+                        <tr>
+                            <td>240</td>
+                            <td>115240</td>
+                            <td>Nguyễn Quang Khởi</td>
+                            <td>16/11/2010</td>
+                            <td>5</td>
+                            <td>Ko Thi</td>
+                            <td>3.25</td>
+                            <td>8.25</td>
+                        </tr>
+                        <tr>
+                            <td>241</td>
+                            <td>115241</td>
+                            <td>Phạm Văn Long</td>
+                            <td>14/01/2010</td>
+                            <td>6.5</td>
+                            <td>Ko Thi</td>
+                            <td>6.5</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>242</td>
+                            <td>115242</td>
+                            <td>Nguyễn Thị Trà My</td>
+                            <td>4/10/10</td>
+                            <td>6</td>
+                            <td>Ko Thi</td>
+                            <td>5</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>243</td>
+                            <td>115243</td>
+                            <td>Vũ Văn Phương</td>
+                            <td>15/08/2010</td>
+                            <td>5.25</td>
+                            <td>Ko Thi</td>
+                            <td>4</td>
+                            <td>9.25</td>
+                        </tr>
+                        <tr>
+                            <td>244</td>
+                            <td>115244</td>
+                            <td>Nguyễn Công Thành</td>
+                            <td>30/01/2010</td>
+                            <td>4.75</td>
+                            <td>Ko Thi</td>
+                            <td>7.25</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>245</td>
+                            <td>115245</td>
+                            <td>Phạm Thị Thu Trang</td>
+                            <td>18/03/2010</td>
+                            <td>1.25</td>
+                            <td>Ko Thi</td>
+                            <td>1</td>
+                            <td>2.25</td>
+                        </tr>
+                        <tr>
+                            <td>246</td>
+                            <td>115246</td>
+                            <td>Nguyễn Hoàng Văn</td>
+                            <td>18/12/2010</td>
+                            <td>3</td>
+                            <td>Ko Thi</td>
+                            <td>5.5</td>
+                            <td>8.5</td>
+                        </tr>
+                        <tr>
+                            <td>247</td>
+                            <td>115247</td>
+                            <td>Lưu Phương Anh</td>
+                            <td>15/12/2010</td>
+                            <td>7</td>
+                            <td>Ko Thi</td>
+                            <td>5.25</td>
+                            <td>12.25</td>
+                        </tr>
+                        <tr>
+                            <td>248</td>
+                            <td>115248</td>
+                            <td>Chu Văn Bách</td>
+                            <td>14/04/2010</td>
+                            <td>5.75</td>
+                            <td>Ko Thi</td>
+                            <td>4.5</td>
+                            <td>10.25</td>
+                        </tr>
+                        <tr>
+                            <td>249</td>
+                            <td>115249</td>
+                            <td>Phạm Thị Ngọc Chi</td>
+                            <td>17/08/2010</td>
+                            <td>4.75</td>
+                            <td>Ko Thi</td>
+                            <td>1.25</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>250</td>
+                            <td>115250</td>
+                            <td>Nguyễn Văn Chiến</td>
+                            <td>12/7/10</td>
+                            <td>bỏ thi</td>
+                            <td>Ko Thi</td>
+                            <td>bỏ thi</td>
+                            <td>bỏ thi</td>
+                        </tr>
+                        <tr>
+                            <td>251</td>
+                            <td>115251</td>
+                            <td>Nguyễn Mạnh Hổ</td>
+                            <td>3/3/10</td>
+                            <td>5.25</td>
+                            <td>Ko Thi</td>
+                            <td>1.5</td>
+                            <td>6.75</td>
+                        </tr>
+                        <tr>
+                            <td>252</td>
+                            <td>115252</td>
+                            <td>Dương Thùy Chi</td>
+                            <td>25/07/2010</td>
+                            <td>7.5</td>
+                            <td>Ko Thi</td>
+                            <td>7.5</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>253</td>
+                            <td>115253</td>
+                            <td>Đoàn Thị Hồng Cúc</td>
+                            <td>21/06/2010</td>
+                            <td>5.5</td>
+                            <td>Ko Thi</td>
+                            <td>2.75</td>
+                            <td>8.25</td>
+                        </tr>
+                        <tr>
+                            <td>254</td>
+                            <td>115254</td>
+                            <td>Nguyễn Văn Đông</td>
+                            <td>11/7/10</td>
+                            <td>6.25</td>
+                            <td>Ko Thi</td>
+                            <td>3</td>
+                            <td>9.25</td>
+                        </tr>
+                        <tr>
+                            <td>255</td>
+                            <td>115255</td>
+                            <td>Nguyễn Ngọc Khoa</td>
+                            <td>26/12/2010</td>
+                            <td>4.75</td>
+                            <td>Ko Thi</td>
+                            <td>1.25</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>256</td>
+                            <td>115256</td>
+                            <td>Lê Thị Cẩm Tú</td>
+                            <td>3/7/10</td>
+                            <td>7.5</td>
+                            <td>Ko Thi</td>
+                            <td>3.75</td>
+                            <td>11.25</td>
+                        </tr>
+                        <tr>
+                            <td>257</td>
+                            <td>115257</td>
+                            <td>Nguyễn Cao Sóng</td>
+                            <td>5/11/10</td>
+                            <td>6.25</td>
+                            <td>Ko Thi</td>
+                            <td>5.5</td>
+                            <td>11.75</td>
+                        </tr>
+                        <tr>
+                            <td>258</td>
+                            <td>115258</td>
+                            <td>Nguyễn Tân Phong</td>
+                            <td></td>
+                            <td>1.75</td>
+                            <td>Ko Thi</td>
+                            <td>1.5</td>
+                            <td>3.25</td>
+                        </tr>
+                        <tr>
+                            <td>259</td>
+                            <td>115259</td>
+                            <td>Nguyễn Thị Quỳnh Như</td>
+                            <td>11/10/10</td>
+                            <td>6.5</td>
+                            <td>Ko Thi</td>
+                            <td>4</td>
+                            <td>10.5</td>
+                        </tr>
+                        <tr>
+                            <td>260</td>
+                            <td>115260</td>
+                            <td>Chu Văn Tiến</td>
+                            <td>29/07/2010</td>
+                            <td>6</td>
+                            <td>Ko Thi</td>
+                            <td>4</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>261</td>
+                            <td>115261</td>
+                            <td>Phạm Thị Xuân</td>
+                            <td>13/06/2010</td>
+                            <td>5</td>
+                            <td>Ko Thi</td>
+                            <td>0.5</td>
+                            <td>5.5</td>
+                        </tr>
+                        <tr>
+                            <td>262</td>
+                            <td>115262</td>
+                            <td>Phạm Thị Hải Yến</td>
+                            <td>9/3/10</td>
+                            <td>5.5</td>
+                            <td>Ko Thi</td>
+                            <td>4</td>
+                            <td>9.5</td>
+                        </tr>
+                        <tr>
+                            <td>263</td>
+                            <td>115263</td>
+                            <td>Hoàng Thị Nhài</td>
+                            <td>23/5/2010</td>
+                            <td>7.25</td>
+                            <td>4.75</td>
+                            <td>4.25</td>
+                            <td>16.25</td>
+                        </tr>
+                        <tr>
+                            <td>264</td>
+                            <td>115264</td>
+                            <td>Phạm Văn Kiên</td>
+                            <td></td>
+                            <td>5.25</td>
+                            <td>Ko Thi</td>
+                            <td>6.5</td>
+                            <td>11.75</td>
+                        </tr>
+                        <tr>
+                            <td>265</td>
+                            <td>115240</td>
+                            <td>Nguyễn Quang Khởi</td>
+                            <td>16/11/2010</td>
+                            <td>5</td>
+                            <td>Ko Thi</td>
+                            <td>3.25</td>
+                            <td>8.25</td>
+                        </tr>
+                        <tr>
+                            <td>266</td>
+                            <td>115267</td>
+                            <td>Phạm Tiến Mạnh</td>
+                            <td></td>
+                            <td>2</td>
+                            <td>4.75</td>
+                            <td>6</td>
+                            <td>12.75</td>
+                        </tr>
+                        <tr>
+                            <td>267</td>
+                            <td>115265</td>
+                            <td>Phạm Đăng Khoa</td>
+                            <td></td>
+                            <td>Ko Thi</td>
+                            <td>Bỏ Thi</td>
+                            <td>Ko Thi</td>
+                            <td>Bỏ Thi</td>
+                        </tr>
+                        <tr>
+                            <td>268</td>
+                            <td>115266</td>
+                            <td>Nguyễn Thị Hà Anh</td>
+                            <td>17/08/2010</td>
+                            <td>Ko Thi</td>
+                            <td>3</td>
+                            <td>Ko Thi</td>
+                            <td>3</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     <section>
@@ -297,6 +2987,6 @@
 <!-- JS -->
 <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" onload="AOS.init();"></script>
 
-<script src="./js/script.js?v=11" defer></script>
+<script src="./js/script.js?v=14" defer></script>
 </body>
 </html>
