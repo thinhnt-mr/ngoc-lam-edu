@@ -664,14 +664,6 @@ iframe {
     iframe {
         height: 50vh;
     }
-    .overlay{
-        display: flex;
-        justify-content: center;
-        width: 900px;
-    }
-    .popup-form{
-        width: 900px;
-    }
 }
 
 .error-message {
@@ -719,11 +711,10 @@ iframe {
     position: fixed;
     top: 105px;
     left: 0;
-    max-width: 400px;
     height: calc(100% - 60px);
     background: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     visibility: hidden;
     opacity: 0;
@@ -736,12 +727,12 @@ iframe {
 }
 .popup-form {
     background: white;
-    max-width: 400px;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     position: relative;
+    max-width: 900px;
     max-height: 80vh;
     overflow-y: auto;
 }
@@ -791,6 +782,9 @@ iframe {
 }
 .popup-form button:hover{
     background-color: #4CAF50;
+}
+.size-table{
+    width: auto;
 }
 #googleForm textarea{
     height: 150px;
