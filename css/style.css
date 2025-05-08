@@ -529,6 +529,9 @@ iframe {
         justify-self: center;
         width: 95%;
     }
+    .popup-form{
+        max-width: 420px;
+    }
 }
 @media (max-width: 460px) {
     .slideshow-container{
@@ -663,12 +666,6 @@ iframe {
     iframe {
         height: 50vh;
     }
-    .overlay{
-        width: 900px;
-    }
-    .popup-form{
-        width: 900px;
-    }
 }
 
 .error-message {
@@ -800,7 +797,6 @@ iframe {
     overflow-y: auto;
     max-height: 700px;
     border: 1px solid #ccc;
-    width: auto;
     box-sizing: border-box;
 }
 
@@ -814,7 +810,8 @@ iframe {
 
 /* Bọc bảng để căn giữa bảng */
 .table-student {
-    width: auto;
+    height: 40vh;
+    width: 100%;
     overflow-x: auto;
 }
 
@@ -847,15 +844,7 @@ iframe {
 tbody tr td {
     font-size: 12px;
 }
-.table-student-top{
-    width: 100%;
-}
-.table-student-top thead th {
-    padding: 5px;
-}
-.table-student-top tbody td{
-    padding: 5px;
-}
+
 #googleForm textarea{
     height: 150px;
 }
