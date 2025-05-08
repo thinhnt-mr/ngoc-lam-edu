@@ -529,12 +529,6 @@ iframe {
         justify-self: center;
         width: 95%;
     }
-    .overlay{
-        width: 400px;
-    }
-    .popup-form{
-        width: 400px;
-    }
 }
 @media (max-width: 460px) {
     .slideshow-container{
@@ -726,7 +720,7 @@ iframe {
     height: calc(100% - 100px);
     background: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: center;
+    justify-self: center;
     align-items: center;
     visibility: hidden;
     opacity: 0;
@@ -738,16 +732,15 @@ iframe {
     opacity: 1;
 }
 .popup-form {
-    display: flex;
-    justify-self: center;
+    justify-content: center;
     background: white;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    width: auto;
-    max-height: 100vh;
+    max-width: 900px;
+    max-height: 82vh;
     overflow-y: auto;
 }
 
@@ -805,9 +798,9 @@ iframe {
     padding: 5px 5px;
     overflow-x: auto;
     overflow-y: auto;
-    max-height: 750px;
+    max-height: 700px;
     border: 1px solid #ccc;
-    width: 100%;
+    width: auto;
     box-sizing: border-box;
 }
 
@@ -815,7 +808,7 @@ iframe {
 .danh-sach-container h2 {
     text-align: center;
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 0;
     color: #15515d;
 }
 
