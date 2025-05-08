@@ -716,7 +716,7 @@ iframe {
     position: fixed;
     top: 105px;
     left: 0;
-    width: auto;
+    width: 100%;
     height: calc(100% - 100px);
     background: rgba(0, 0, 0, 0.5);
     display: flex;
