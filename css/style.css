@@ -529,7 +529,12 @@ iframe {
         justify-self: center;
         width: 95%;
     }
-
+    .overlay{
+        width: 400px;
+    }
+    .popup-form{
+        width: 400px;
+    }
 }
 @media (max-width: 460px) {
     .slideshow-container{
@@ -733,6 +738,7 @@ iframe {
     opacity: 1;
 }
 .popup-form {
+    display: flex;
     justify-self: center;
     background: white;
     padding: 10px;
@@ -741,7 +747,7 @@ iframe {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     position: relative;
     width: auto;
-    max-height: 120vh;
+    max-height: 100vh;
     overflow-y: auto;
 }
 
@@ -852,10 +858,10 @@ tbody tr td {
     width: 100%;
 }
 .table-student-top thead th {
-    padding: 10px;
+    padding: 5px;
 }
 .table-student-top tbody td{
-    padding: 10px;
+    padding: 5px;
 }
 #googleForm textarea{
     height: 150px;
