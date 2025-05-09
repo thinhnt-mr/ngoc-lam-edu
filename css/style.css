@@ -46,7 +46,6 @@ nav ul li a {
     text-decoration: none;
     font-weight: 500;
     opacity: 75%;
-    border-bottom:1px solid grey;
 }
 
 /* Hover đổi màu chữ */
@@ -76,7 +75,7 @@ nav ul li a:hover::after {
 /* Menu mặc định ẩn */
 .menu {
     position: absolute;
-    top: 147px;
+    top: 100px;
     left: 0;
     height: 100vh;
     background: white;
@@ -124,6 +123,7 @@ nav ul li a:hover::after {
     padding: 12px;
     margin: 0;
     cursor: pointer;
+    border-bottom: 1px solid lightgray;
 }
 
 /* Responsive: Khi màn hình >= 768px */
@@ -533,7 +533,7 @@ iframe {
         width: 95%;
     }
     .popup-form{
-        width: 425px;
+        width: 400px;
     }
 }
 @media (max-width: 460px) {
@@ -796,7 +796,7 @@ iframe {
     padding: 5px 5px;
     overflow-x: auto;
     overflow-y: auto;
-    max-height: 700px;
+    max-height: 600px;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
