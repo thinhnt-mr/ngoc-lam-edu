@@ -788,11 +788,11 @@ iframe {
 .popup-form button:hover{
     background-color: #4CAF50;
 }
-/* Container toàn bộ phần danh sách */
+
 .danh-sach-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* căn giữa bảng và tiêu đề */
+    align-items: center;
     padding: 5px 5px;
     overflow-x: auto;
     overflow-y: auto;
