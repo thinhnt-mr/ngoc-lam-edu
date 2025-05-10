@@ -40,7 +40,7 @@ nav {
 nav ul li a {
     position: relative;
     display: inline-block;
-    padding: 0;
+    padding: 0 65px 0 65px;
     font-size: 18px;
     color: black;
     text-decoration: none;
@@ -739,7 +739,7 @@ iframe {
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    width: auto;
+    width: 95%;
     max-width: 900px;
     max-height: 70vh;
     overflow-y: auto;
@@ -760,8 +760,8 @@ iframe {
     background: #555;
 }
 .close-btn {
-    position: fixed;
-    right: 30px;
+    position: absolute;
+    right: 0;
     width: 55px;
     font-size: 24px;
     cursor: pointer;
