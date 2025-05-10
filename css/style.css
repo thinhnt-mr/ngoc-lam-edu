@@ -739,6 +739,7 @@ iframe {
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     position: relative;
+    width: auto;
     max-width: 900px;
     max-height: 70vh;
     overflow-y: auto;
@@ -759,8 +760,9 @@ iframe {
     background: #555;
 }
 .close-btn {
-    position: absolute;
-    width: 45px;
+    position: fixed;
+    right: 30px;
+    width: 55px;
     font-size: 24px;
     cursor: pointer;
 }
